@@ -13,6 +13,7 @@ gem 'capistrano'
 gem "jquery-ui-rails"
 gem 'rich'
 gem 'will_paginate', '~> 3.0.0'
+#gem 'aws-sdk', '~> 1.3.4'
 
 # Gems used only for assets and not required
 # in production environments by default.

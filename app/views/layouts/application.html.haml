@@ -1,0 +1,50 @@
+!!!
+%html
+  %head
+    %title GyD Objetos
+
+    %meta{:"http-equiv" => "Content-Type", :content => "text/html;charset=utf-8" } 
+    %meta{:name => "title", :content => "" }
+    %meta{:name => "keywords", :content => "" }
+    %meta{:name => "description", :content => "" }    
+
+    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "site"
+
+    = javascript_include_tag "jquery"
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+
+  %body
+    .wrapped
+      .main-container
+        .header
+          .left-menu
+            .line-left
+            .buttons
+              .first-button
+                = link_to raw("<span>QUIENES SOMOS</span>"), index_path("quienes-somos"), :class => ("selected" if @event == "quienes-somos")
+              .menu-star-separator
+              .second-button
+                = link_to raw("<span>CONTACTO</span>"), index_path("contacto"), :class => ("selected" if @event == "contacto")
+            .clear
+            .line-left
+          .logo
+            =image_tag "logo.png"
+          .right-menu
+            .line-right
+            .buttons
+              .button
+                = link_to raw("<span>HOGAR</span>"), index_path("hogar"), :class => ("selected" if @event == "hogar")
+              .menu-star-separator
+              .button
+                = link_to raw("<span>BAZAR</span>"), index_path("bazar"), :class => ("selected" if @event == "bazar")
+              .menu-star-separator
+              .button
+                = link_to raw("<span>PETIT</span>"), index_path("petit"), :class => ("selected" if @event == "petit")
+            .clear
+            .line-right
+      .middle
+        = yield
+      .footer

@@ -1,0 +1,66 @@
+.center
+  - if @event == "home"
+    .home-photo
+      = image_tag @home_photos.first.photo.url(:home)
+    .clear
+    .modules
+      .module
+        = image_tag "home-module-1.png"
+        Lista de Casamientos
+      .module
+        = image_tag "home-module-2.png"
+        Novedades
+      .module.last
+        = image_tag "home-module-3.png"
+        Tus Regalos personalizados
+    .clear
+  - elsif @event == "contacto"    
+    .frame
+      .title
+        .content
+          .star-left
+          .page-name
+            Contacto
+          .star-right
+        .clear
+      .left
+        .text
+          = @contact_page.text.html_safe
+        .contact-details
+          .row
+            .label
+              Teléfonos:
+            .value
+              = @contact_page.tel
+          .clear
+          .row
+            .label
+              Dirección:
+            .value
+              = @contact_page.contact_address
+          .clear
+          .row
+            .label
+              Email:
+            .value
+              = @contact_page.email
+          .clear              
+        .line
+        = form_tag email_path, :class=>"contact-form" do
+          .fields
+            .label
+              Nombre
+            .field
+              = text_field_tag :name
+            .label
+              Email
+            .field
+              = text_field_tag :email
+            .label
+              Mensaje
+            .field
+              = text_area_tag :content
+            .field.submit
+              = submit_tag "Enviar" 
+      .right
+        foto

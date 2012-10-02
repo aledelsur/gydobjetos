@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.clear{clear: both;}
+
+.wrapped{
+  .main-container{
+    margin: auto;
+    width: 980px;
+    .header{
+      height: 200px;
+      margin: auto;
+      width: 800px;
+      .line-left{background-image:url('menu-pointed-line.png'); width: 250px; height: 2px;}
+      .line-right{background-image:url('menu-pointed-line.png'); width: 245px; height: 2px;}
+      .buttons{
+        .menu-star-separator{background-image:url('star.png'); float: left; height: 6px; margin-left: 10%; margin-right: 10%; margin-top: 5%; width: 5px;}
+        .first-button{width: 115px; padding-bottom: 2%; padding-top: 2%; float: left;}
+        .second-button{float: left; padding-bottom: 2%; padding-top: 2%; width: 78px;}
+        .button{
+          float: left;
+          padding-bottom: 2%;
+          padding-top: 2%;
+        }        
+        a{text-decoration: none; font-size: 14px;}
+      }
+      
+      .left-menu{float: left; margin-top: 8%; width: 250px;}
+      .right-menu{float: left; margin-top: 8%;}
+      .logo{width: 227px; float: left; margin-left: 39px; margin-right: 39px;}
+    }
+
+  }
+
+  .middle{
+    background: url('middle-font.png') no-repeat scroll 0 50px transparent;;
+    height: 494px;
+    margin-bottom: 5px;
+    .center{
+      margin: auto;
+      width: 800px;
+      .home-photo{
+        background: none repeat scroll 0 0 white;
+        box-shadow: 1px 1px 1px 1px #888888;
+        padding: 1%;
+        margin-bottom: 3%;
+        height: 250px;
+        img{width: 784px; height: 251px;}
+      }
+      .modules{
+        .module{
+          background: none repeat scroll 0 0 white;
+          box-shadow: 1px 1px 1px 1px #888888;
+          float: left;
+          height: 175px;
+          margin-bottom: 3%;
+          margin-right: 32px;
+          padding: 10px;
+          width: 225px;
+        }
+        .module.last{margin:0px;}
+      }
+
+      .frame{
+        background: none repeat scroll 0 0 white;
+        padding: 1%;
+        margin-bottom: 3%;
+        height: 479px;
+        border: 1px solid;
+        .title{
+          height: 50px;
+          .content{height: 20px; margin-bottom: auto; margin-left: auto; margin-right: auto; padding-top: 15px; width: 125px;}
+
+          .page-name{float: left; width: 70px; color: #A7DEE4; font-weight: bold;}
+        }
+        .left{
+          width: 45%;
+          .text{font-size: 15px;}
+          .contact-details{
+            font-size: 14px;
+            .row{
+              .label{color: #C93092;float: left; width: 100px;}
+              .value{float: left;}
+            }
+          }
+          .line{background-image:url('menu-pointed-line.png'); width: 360px; height: 2px;
+          .contact-form{
+            
+            
+          }
+          margin-bottom: 4%; margin-top: 4%;}
+        }
+        .right{}
+      }
+      
+    }
+  }  
+
+  .footer{
+    background: url('footer-font.png');
+    height: 92px;
+  }
+}
+.star-left{background-image:url('star.png'); margin-top: 6px; height: 6px; width: 5px; float: left; margin-right: 10%;}
+.star-right{background-image:url('star.png'); margin-top: 6px; height: 6px; width: 5px; float: left; margin-left: 10%;}
+    
