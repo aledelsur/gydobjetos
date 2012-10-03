@@ -1,0 +1,28 @@
+.site-sections-center
+  .content
+    .left
+      .site-image
+        = image_tag "home-module-1.png"
+      .text
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+      .news
+        = image_tag "home-module-1.png"
+    .right
+      .images
+        - i=1
+        - 12.times do
+          - if (i == 3 || i == 6 || i == 9 || i == 12)
+            .one-image.last
+              = image_tag "home-module-1.png"
+          - else
+            .one-image
+              = image_tag "home-module-1.png"
+          - i=i+1
+      - if params[:page] == "1" || params[:page].nil?
+        = will_paginate @paginations, :next_label=>"SIGUIENTE", :previous_label=>"", :page_links=>false
+      - elsif params[:page] == @paginations.total_pages.to_s
+        = will_paginate @paginations, :next_label=>"", :previous_label=>"ANTERIOR", :page_links=>false  
+      - else
+        = will_paginate @paginations, :next_label=>"SIGUIENTE", :previous_label=>"ANTERIOR", :page_links=>false  
+        
+      

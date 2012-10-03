@@ -44,7 +44,6 @@
 
   .middle{
     background: url('middle-font.png') no-repeat scroll 0 50px transparent;;
-    height: 494px;
     margin-bottom: 5px;
     .center{
       margin: auto;
@@ -85,24 +84,88 @@
         }
         .left{
           width: 45%;
-          .text{font-size: 15px;}
+          float: left;
+          .text{font-size: 15px; color: #B5B5B4;}
           .contact-details{
             font-size: 14px;
             .row{
-              .label{color: #C93092;float: left; width: 100px;}
-              .value{float: left;}
+              overflow: hidden;
+              margin-bottom: 5%;
+              .label{color: #C93092; float: left; width: 100px;}
+              .value{color: #B5B5B4; float: left; width: 248px;}
             }
           }
-          .line{background-image:url('menu-pointed-line.png'); width: 360px; height: 2px;
+          .line{background-image:url('menu-pointed-line.png'); width: 360px; height: 2px; margin-bottom: 4%; margin-top: 4%;}
           .contact-form{
-            
-            
+            .fields{
+              font-size: 14px;
+              .label{color: #B5B5B4;}
+              .field.text input{
+                color: #B5B5B4;
+                height: 20px;
+                padding: 2px;
+              }
+              .field.area textarea{
+                color: #B5B5B4;
+                height: 63px;
+                padding: 2px;
+                width: 228px;
+              }
+              
+            }
           }
-          margin-bottom: 4%; margin-top: 4%;}
         }
-        .right{}
+        .right{
+          float: right;
+          width: 47%;
+          .contact-image-frame{
+            background: none repeat scroll 0 0 white; border: 1px solid; height: 370px; margin-bottom: 3%; padding: 1%; width: 90%;
+            img{height: 369px; width: 331px;}
+          }
+        }
       }
       
+    }
+
+    .site-sections-center{
+      background: none repeat scroll 0 0 white;
+      margin: auto;
+      width: 800px;
+      border: 1px solid;
+      .content{
+        overflow: hidden;
+        padding: 2%;
+        .left{
+          float: left;
+          width: 30%;
+          .site-image{margin-bottom: 5%; text-align: center;}
+          .text{font-size: 14px; color: #B5B5B4; text-align: center; margin-bottom: 5%;}
+          .news{}
+        }
+        .right{
+          float: right;
+          width: 70%;
+          .images{
+            margin-left: 2%;
+            overflow: hidden;
+            .one-image{
+              float: left;
+              width: 162px;
+              margin-right: 3%;
+              img{border: 1px solid; height: 180px; padding: 2%; width: 155px;}
+            }
+            .one-image.last{margin-right: 0px; float: left; margin-left: 0%; width: 165px;}
+          }
+        }
+        .pagination{
+          overflow: hidden;
+          font-size: 14px; 
+          overflow: hidden; 
+          a{text-decoration: none;}
+          .previous_page{float: left;}
+          .next_page{float: right;}
+        }
+      }
     }
   }  
 

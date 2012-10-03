@@ -1,0 +1,50 @@
+.frame
+  .title
+    .content
+      .star-left
+      .page-name
+        Contacto
+      .star-right
+    .clear
+  .left
+    .text
+      = @contact_page.text.html_safe
+    .contact-details
+      .row
+        .label
+          Teléfonos:
+        .value
+          = @contact_page.tel
+      .clear
+      .row
+        .label
+          Dirección:
+        .value
+          = @contact_page.contact_address
+      .clear
+      .row
+        .label
+          Email:
+        .value
+          = @contact_page.email
+      .clear              
+    .line
+    = form_tag email_path, :class=>"contact-form" do
+      .fields
+        .label
+          Nombre
+        .field.text
+          = text_field_tag :name
+        .label
+          Email
+        .field.text
+          = text_field_tag :email
+        .label
+          Mensaje
+        .field.area
+          = text_area_tag :content
+        .field.submit
+          = submit_tag "Enviar" 
+  .right
+    .contact-image-frame
+      =image_tag "home-module-1.png"
