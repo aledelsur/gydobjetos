@@ -5,6 +5,9 @@ ActiveAdmin.register Page do
   index do 
     column :title
     default_actions
+    column "photos" do |p|
+      link_to "abm fotos", admin_photos_path(:page_id => p.id) 
+    end
   end
 
   form do |f|

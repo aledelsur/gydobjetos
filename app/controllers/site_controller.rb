@@ -22,7 +22,6 @@ class SiteController < ApplicationController
       @paginations = Photo.paginate :per_page => 12, :page => params[:page] #This array is for testing pagination. Will be deleted
     else
       @event = "home"
-      @home_photos = HomePhoto.all
     end  
   end
 

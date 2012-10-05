@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :title, :text, :code, :position
+  attr_accessible :title, :text, :code, :position, :page_id
 
   belongs_to :page
 

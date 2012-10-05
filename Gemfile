@@ -12,6 +12,7 @@ gem 'rich'
 gem 'will_paginate', '~> 3.0.0'
 #gem 'aws-sdk', '~> 1.3.4'
 gem 'sqlite3'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
