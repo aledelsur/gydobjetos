@@ -4,6 +4,7 @@ class SiteController < ApplicationController
     if params[:event] == "quienes-somos"
       @event = "quienes-somos"
       @paginations = Photo.paginate :per_page => 12, :page => params[:page] #This array is for testing pagination. Will be deleted
+      @about_page = Page.find_by_key("quienes-somos")
     elsif params[:event] == "contacto"
       @event = "contacto"
       @contact_page = Page.find_by_key("contacto")
@@ -26,10 +27,10 @@ class SiteController < ApplicationController
   end
 
   def new
-    #Contact.new_contact(params).deliver
-    #flash[:notice] = "Gracias! Tu consulta fue enviada."
-    #@event = "contact"
-    #render "index"
+    Contact.new_contact(params).deliver
+    flash[:notice] = "Gracias! Tu consulta fue enviada."
+    @event = "contact"
+    render "index"
   end  
 
 end

@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+ @import "mixins";
+
 .clear{clear: both;}
 
 .wrapped{
@@ -35,22 +38,22 @@
         a{text-decoration: none; font-size: 14px;}
       }
       
-      .left-menu{float: left; margin-top: 8%; width: 250px;}
-      .right-menu{float: left; margin-top: 8%;}
+      .left-menu{float: left; margin-top: 10%; width: 250px;}
+      .right-menu{float: left; margin-top: 10%;}
       .logo{width: 227px; float: left; margin-left: 39px; margin-right: 39px;}
     }
 
   }
 
   .middle{
-    background: url('middle-font.png') no-repeat scroll 0 50px transparent;;
+    background: url('middle-font.png') no-repeat scroll 0 50px transparent;
     margin-bottom: 5px;
     .center{
       margin: auto;
       width: 800px;
       .home-photo{
-        background: none repeat scroll 0 0 white;
-        box-shadow: 1px 1px 1px 1px #888888;
+        @include shadow;
+        border-radius: 2px 2px 2px 2px;
         padding: 1%;
         margin-bottom: 3%;
         height: 250px;
@@ -58,8 +61,7 @@
       }
       .modules{
         .module{
-          background: none repeat scroll 0 0 white;
-          box-shadow: 1px 1px 1px 1px #888888;
+          @include shadow;
           float: left;
           height: 175px;
           margin-bottom: 3%;
@@ -71,16 +73,17 @@
       }
 
       .frame{
-        background: none repeat scroll 0 0 white;
         padding: 1%;
         margin-bottom: 3%;
         height: 479px;
-        border: 1px solid;
+        @include shadow;
         .title{
           height: 50px;
-          .content{height: 20px; margin-bottom: auto; margin-left: auto; margin-right: auto; padding-top: 15px; width: 125px;}
+          .content{margin-bottom: auto; margin-left: auto; margin-right: auto; padding-top: 15px; overflow: hidden; width: 155px;}
+          .content.contact{margin-bottom: auto; margin-left: 44%; margin-right: auto; padding-top: 15px; overflow: hidden; width: 155px;}
 
-          .page-name{float: left; width: 70px; color: #A7DEE4; font-weight: bold;}
+          .page-name{float: left; color: #A7DEE4; font-weight: bold;}
+          
         }
         .left{
           width: 45%;
@@ -118,8 +121,12 @@
         .right{
           float: right;
           width: 47%;
-          .contact-image-frame{
-            background: none repeat scroll 0 0 white; border: 1px solid; height: 370px; margin-bottom: 3%; padding: 1%; width: 90%;
+          .contact-image-frame, .about-image-frame{
+            height: 370px;
+            margin-bottom: 3%;
+            padding: 1%;
+            width: 90%;
+            @include shadow;
             img{height: 369px; width: 331px;}
           }
         }
@@ -128,10 +135,9 @@
     }
 
     .site-sections-center{
-      background: none repeat scroll 0 0 white;
       margin: auto;
       width: 800px;
-      border: 1px solid;
+      @include shadow;
       .content{
         overflow: hidden;
         padding: 2%;
@@ -152,7 +158,9 @@
               float: left;
               width: 162px;
               margin-right: 3%;
-              img{border: 1px solid; height: 180px; padding: 2%; width: 155px;}
+              margin-bottom: 8px;
+              @include shadow;
+              img{height: 180px; padding: 2%; width: 155px;}
             }
             .one-image.last{margin-right: 0px; float: left; margin-left: 0%; width: 165px;}
           }
@@ -160,7 +168,8 @@
         .pagination{
           overflow: hidden;
           font-size: 14px; 
-          overflow: hidden; 
+          width: 97%;
+          margin-left: 2%;
           a{text-decoration: none;}
           .previous_page{float: left;}
           .next_page{float: right;}
@@ -174,6 +183,6 @@
     height: 92px;
   }
 }
-.star-left{background-image:url('star.png'); margin-top: 6px; height: 6px; width: 5px; float: left; margin-right: 10%;}
-.star-right{background-image:url('star.png'); margin-top: 6px; height: 6px; width: 5px; float: left; margin-left: 10%;}
+.star-left{background-image:url('star.png'); margin-top: 6px; height: 6px; width: 5px; float: left; margin-right: 10px;}
+.star-right{background-image:url('star.png'); margin-top: 6px; height: 6px; width: 5px; float: left; margin-left: 10px;}
     

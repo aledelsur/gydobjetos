@@ -1,0 +1,14 @@
+.frame
+  .title
+    .content
+      .star-left
+      .page-name
+        Quienes Somos
+      .star-right
+    .clear
+  .left
+    .text
+      = @about_page.text.html_safe if @about_page.text
+  .right
+    .about-image-frame
+      =image_tag "home-module-1.png"
