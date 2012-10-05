@@ -9,8 +9,8 @@ class AdminUser < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role
   # attr_accessible :title, :body
 
-  scope :managers, lambda {where :role => 'manager'}
-  scope :admins, lambda {where :role => 'admin'}
+  scope :admins, lambda {where :role => 'Admin'}
+  scope :super_admins, lambda {where :role => 'SuperAdmin'}
 
   def has_role?(role)
     get_role == role

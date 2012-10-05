@@ -1,18 +1,12 @@
 ActiveAdmin.register AdminUser do     
   
-  scope :managers, :default => true
-  scope :admins
+  scope :admins, :default => true
+  scope :super_admins
+
+  actions :index, :edit, :update, :destroy, :new, :create
 
   #Delete filters
   config.clear_sidebar_sections!
-
-  controller do
-    def create
-      params[:admin_user][:role] = "manager"
-      AdminUser.create(params[:admin_user])
-      redirect_to admin_admin_users_path
-    end
-  end
 
   index do                            
     column :email                     
@@ -27,7 +21,8 @@ ActiveAdmin.register AdminUser do
       f.input :email                  
       f.input :password               
       f.input :password_confirmation  
+      f.input :role, :as => :select, :collection => ["Admin", "SuperAdmin"], :include_blank => false
     end                               
     f.buttons                         
-  end                           
+  end                       
 end                                   

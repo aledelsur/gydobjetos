@@ -1,7 +1,7 @@
 admin_user = AdminUser.first
 unless admin_user
-  AdminUser.create(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password', :role => 'admin')
-  puts "Admin user created"
+  AdminUser.create(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password', :role => 'SuperAdmin')
+  puts "SuperAdmin user created"
 end
 
 page = Page.first
