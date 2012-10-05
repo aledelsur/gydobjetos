@@ -2,7 +2,7 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
   def migrate(direction)
     super
     # Create a default user
-    AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password') if direction == :up
+    # AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password') if direction == :up
   end
 
   def change
@@ -39,7 +39,7 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
       ## Token authenticatable
       # t.string :authentication_token
 
-
+      t.string :role
       t.timestamps
     end
 

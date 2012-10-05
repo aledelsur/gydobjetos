@@ -1,9 +1,22 @@
 ActiveAdmin.register AdminUser do     
+  
+  scope :managers, :default => true
+  scope :admins
+
+  #Delete filters
+  config.clear_sidebar_sections!
+
+  controller do
+    def create
+      params[:admin_user][:role] = "manager"
+      AdminUser.create(params[:admin_user])
+      redirect_to admin_admin_users_path
+    end
+  end
+
   index do                            
     column :email                     
-    column :current_sign_in_at        
-    column :last_sign_in_at           
-    column :sign_in_count             
+    column :role
     default_actions                   
   end                                 
 
@@ -16,5 +29,5 @@ ActiveAdmin.register AdminUser do
       f.input :password_confirmation  
     end                               
     f.buttons                         
-  end                                 
+  end                           
 end                                   

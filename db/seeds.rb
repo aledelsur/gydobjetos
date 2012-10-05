@@ -1,3 +1,9 @@
+admin_user = AdminUser.first
+unless admin_user
+  AdminUser.create(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password', :role => 'admin')
+  puts "Admin user created"
+end
+
 page = Page.first
 unless page
   Page.create(:title=>"Quienes somos", :key => "quienes-somos")

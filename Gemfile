@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 
 gem 'mysql2'
 gem 'activeadmin'
+gem 'activeadmin-cancan'
 gem "paperclip", '~> 3.1.2'
 gem 'haml', '~> 3.1.6'
 gem 'capistrano'
