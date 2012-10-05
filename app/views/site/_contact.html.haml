@@ -1,6 +1,6 @@
 .frame
   .title
-    .content
+    .content.contact
       .star-left
       .page-name
         Contacto
@@ -8,7 +8,7 @@
     .clear
   .left
     .text
-      = @contact_page.text.html_safe
+      = @contact_page.text.html_safe if @contact_page.text
     .contact-details
       .row
         .label
