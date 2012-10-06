@@ -6,7 +6,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.text :text
       t.string :code
       t.integer :page_id
-      
+      t.attachment :photo
       t.integer :position
 
       t.timestamps

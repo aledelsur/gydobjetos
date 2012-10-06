@@ -68,9 +68,13 @@ ActiveRecord::Schema.define(:version => 20121001194411) do
     t.text     "text"
     t.string   "code"
     t.integer  "page_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "rich_rich_files", :force => true do |t|
