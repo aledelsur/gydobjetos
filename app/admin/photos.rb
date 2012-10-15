@@ -28,7 +28,8 @@ ActiveAdmin.register Photo do
   filter :title
 
   controller do
-
+    skip_before_filter :verify_authenticity_token
+    
     def current_page_photos
       if params[:page_id]
         Page.find(params[:page_id])
