@@ -15,12 +15,15 @@ body{margin:0}
       .line-right{background-image:url('menu-pointed-line.png'); width: 245px; height: 2px;}
       .buttons{
         .menu-star-separator{background-image:url('star.png'); float: left; height: 6px; margin-left: 10%; margin-right: 10%; margin-top: 5%; width: 5px;}
-        .first-button{width: 115px; padding-bottom: 2%; padding-top: 2%; float: left;}
-        .second-button{float: left; padding-bottom: 2%; padding-top: 2%; width: 78px;}
+        .first-button{width: 115px; padding-bottom: 2%; padding-top: 2%; float: left;
+          span{color: yellow;}}
+        .second-button{float: left; padding-bottom: 2%; padding-top: 2%; width: 78px;
+          span{color: yellow;}}
         .button{
           float: left;
           padding-bottom: 2%;
           padding-top: 2%;
+          span{color: yellow;}
         }        
         a{text-decoration: none; font-size: 14px;}
       }

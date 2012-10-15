@@ -2,6 +2,7 @@ ActiveAdmin.register Photo do
   scope_to :current_page_photos
   actions :index, :edit, :update, :destroy
   menu :label => "Fotos", :if => proc{ current_admin_user.has_role? :admin}
+  config.clear_sidebar_sections!
 
   sidebar "Subir Fotos" do
     
@@ -20,9 +21,6 @@ ActiveAdmin.register Photo do
       image_tag (p.photo.url(:small)), :style=> "width: 170px;"
     end
     default_actions
-    column "photos" do |p|
-      link_to "abm fotos", admin_photos_path(:page_id => p.id) 
-    end
   end
 
   filter :title
@@ -57,7 +55,7 @@ ActiveAdmin.register Photo do
       page = Page.find(params[:page_id])
       upload_asset params do |file, mime_type|
         photo = Photo.new(photo: file, page: page, photo_content_type: mime_type.to_s)
-        photo.photo_content_type = mime_type
+        photo.photo_content_type = mime_type.to_s
         photo
       end
     end
