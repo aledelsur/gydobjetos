@@ -1,6 +1,7 @@
 ActiveAdmin.register Photo do
   scope_to :current_page_photos
   actions :index, :edit, :update, :destroy
+  menu :label => "Fotos", :if => proc{ current_admin_user.has_role? :admin}
 
   sidebar "Subir Fotos" do
     
@@ -37,15 +38,26 @@ ActiveAdmin.register Photo do
     def upload_asset(params)
       file = params[:Filedata]
       mime_type = MIME::Types.type_for(file.original_filename).first
-      file.content_type = mime_type
-      photo = yield(file,mime_type)
-      photo.save
+      file.content_type = "#{mime_type}"
+      m = yield(file, mime_type)
+      fkey = file.original_filename
+      resp = {}
+      if m.save
+        resp[:id] = m.id.to_s
+        resp[:url]= m.photo.url(:small)
+      else
+        resp[:errors] = m.errors.messages
+      end
+      
+      return resp
     end
 
     def multifile_upload
       page = Page.find(params[:page_id])
       upload_asset params do |file, mime_type|
-        Photo.new(photo: file, page: page, photo_content_type: mime_type)
+        photo = Photo.new(photo: file, page: page, photo_content_type: mime_type.to_s)
+        photo.photo_content_type = mime_type
+        photo
       end
     end
   end
