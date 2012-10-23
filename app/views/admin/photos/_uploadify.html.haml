@@ -1,4 +1,4 @@
 = form_tag multifile_path, :multipart => true do
   = file_field nil, nil, :name =>:photos, :multiple => "", :id => :multifile_uploader 
-  = hidden_field nil, nil, :name => :page_id, :value =>  params[:page_id], :id => :page_id_hidden
+  = hidden_field nil, nil, :name => :product_id, :value =>  params[:product_id], :id => :product_id_hidden
   = submit_tag "Aceptar"

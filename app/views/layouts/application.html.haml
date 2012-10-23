@@ -7,13 +7,16 @@
     %meta{:name => "title", :content => "" }
     %meta{:name => "keywords", :content => "" }
     %meta{:name => "description", :content => "" }    
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0" }
 
+    = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = stylesheet_link_tag    "application", :media => "all"
 
     = javascript_include_tag "application"
 
     = csrf_meta_tags
 
+    
   %body
     .wrapped
       .main-container
@@ -29,7 +32,7 @@
             .clear
             .line-left
           .logo
-            =image_tag "logo.png"
+            = link_to((image_tag "logo.png"), root_path)
           .right-menu
             .line-right
             .buttons

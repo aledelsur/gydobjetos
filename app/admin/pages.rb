@@ -2,12 +2,22 @@ ActiveAdmin.register Page do
   
   actions :index, :edit, :update
 
+  # index do 
+  #   column :title
+  #   default_actions
+  #   column "Fotos" do |p|
+  #     link_to "Subir/Bajar Fotos", admin_photos_path(:page_id => p.id) 
+  #   end
+  # end
+
   index do 
     column :title
-    default_actions
-    column "Fotos" do |p|
-      link_to "Subir/Bajar Fotos", admin_photos_path(:page_id => p.id) 
+    column "" do |p|
+      if p.key == "hogar" || p.key == "bazar" || p.key == "petit"
+        link_to "Ver Categorias", admin_categories_path(:page_id => p.id) 
+      end
     end
+    default_actions
   end
 
   form do |f|

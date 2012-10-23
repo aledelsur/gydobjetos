@@ -1,10 +1,16 @@
 .home-photo
-  =# image_tag @home_photos.first.photo.url(:home)
+  #slider
+    %ul{:id => "sliderContent"}
+      - @home_photos.each do |hp|
+        %li.sliderImage
+          =image_tag(hp.photo.url(:home))
+          %span
+      .clear.sliderImage
 .clear
 .modules
   .module
     = image_tag "home-module-1.png"
-    Lista de Casamientos
+    = link_to "Lista de Casamientos", index_path("wedding-list")
   .module
     = image_tag "home-module-2.png"
     Novedades

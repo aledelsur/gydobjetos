@@ -16,14 +16,14 @@ body{margin:0}
       .buttons{
         .menu-star-separator{background-image:url('star.png'); float: left; height: 6px; margin-left: 10%; margin-right: 10%; margin-top: 5%; width: 5px;}
         .first-button{width: 115px; padding-bottom: 2%; padding-top: 2%; float: left;
-          span{color: yellow;}}
+          span{color: #E4D32B; font-size: 13px;}}
         .second-button{float: left; padding-bottom: 2%; padding-top: 2%; width: 78px;
-          span{color: yellow;}}
+          span{color: #E4D32B; font-size: 13px;}}
         .button{
           float: left;
           padding-bottom: 2%;
           padding-top: 2%;
-          span{color: yellow;}
+          span{color: #E4D32B; font-size: 13px;}
         }        
         a{text-decoration: none; font-size: 14px;}
       }
@@ -71,6 +71,7 @@ body{margin:0}
           height: 50px;
           .content{margin-bottom: auto; margin-left: auto; margin-right: auto; padding-top: 15px; overflow: hidden; width: 155px;}
           .content.contact{margin-bottom: auto; margin-left: 44%; margin-right: auto; padding-top: 15px; overflow: hidden; width: 155px;}
+          .content.wedding-list{margin-bottom: auto; margin-left: 38%; margin-right: auto; padding-top: 15px; overflow: hidden; width: 205px;}
 
           .page-name{float: left; color: #A7DEE4; font-weight: bold;}
           
@@ -81,18 +82,18 @@ body{margin:0}
           .text{font-size: 15px; color: #B5B5B4;}
           .contact-details{
             font-size: 14px;
-            .row{
+            .row2{
               overflow: hidden;
               margin-bottom: 5%;
-              .label{color: #C93092; float: left; width: 100px;}
+              .label2{color: #C93092; float: left; width: 100px;}
               .value{color: #B5B5B4; float: left; width: 248px;}
             }
           }
           .line{background-image:url('menu-pointed-line.png'); width: 360px; height: 2px; margin-bottom: 4%; margin-top: 4%;}
-          .contact-form{
+          .contact-form, .wedding-list-form{
             .fields{
               font-size: 14px;
-              .label{color: #B5B5B4;}
+              .label2{color: #B5B5B4;}
               .field.text input{
                 color: #B5B5B4;
                 height: 20px;
@@ -119,7 +120,22 @@ body{margin:0}
             @include shadow;
             img{height: 369px; width: 331px;}
           }
+          .wedding-right-frame{
+            margin-bottom: 3%;
+            margin-left: 15%;
+            padding: 1%;
+            width: 90%;            
+            
+            ul li{
+              color: #B5B5B4;
+              span.title{font-size: 16px; font-weight: bold;}
+              span.description{}
+            }
+          }
         }
+      }
+      .frame.wedding-list{
+        height: 635px;
       }
       
     }
@@ -175,3 +191,11 @@ body{margin:0}
 }
 .star-left{background-image:url('star.png'); margin-top: 6px; height: 6px; width: 5px; float: left; margin-right: 10px;}
 .star-right{background-image:url('star.png'); margin-top: 6px; height: 6px; width: 5px; float: left; margin-left: 10px;}
+
+#myModal{
+  display: none;
+  @include shadow;
+  border-radius: 2px 2px 2px 2px;
+}
+.field.area .wedding-list{width: 355px !important; height: 200px !important;}
+.field.area .contact{width: 355px !important; height: 130px !important;}

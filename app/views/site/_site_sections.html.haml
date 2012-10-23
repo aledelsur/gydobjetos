@@ -9,20 +9,29 @@
         = image_tag "home-module-1.png"
     .right
       .images
-        - i=1
-        - 12.times do
-          - if (i == 3 || i == 6 || i == 9 || i == 12)
+        - @products.each_with_index do |products, i|
+          - if (i == 2 || i == 5 || i == 8 || i == 11)
             .one-image.last
-              = image_tag "home-module-1.png"
+              = link_to image_tag(product.photos.first.url(:small)), "", :class=>"section-photo", :product_id=>product.id
           - else
             .one-image
-              = image_tag "home-module-1.png"
-          - i=i+1
+              = link_to image_tag(product.photos.first.url(:small)), "", :class=>"section-photo", :product_id=>product.id
       - if params[:page] == "1" || params[:page].nil?
-        = will_paginate @paginations, :next_label=>"SIGUIENTE", :previous_label=>"", :page_links=>false
-      - elsif params[:page] == @paginations.total_pages.to_s
-        = will_paginate @paginations, :next_label=>"", :previous_label=>"ANTERIOR", :page_links=>false  
+        = will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"", :page_links=>false
+      - elsif params[:page] == @products.total_pages.to_s
+        = will_paginate @products, :next_label=>"", :previous_label=>"ANTERIOR", :page_links=>false  
       - else
-        = will_paginate @paginations, :next_label=>"SIGUIENTE", :previous_label=>"ANTERIOR", :page_links=>false  
-        
+        = will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"ANTERIOR", :page_links=>false  
+      =#http://twitter.github.com/bootstrap/javascript.html
+  %div{id: 'myModal', :class => 'modal'}
+    .modal-header
+      %h3
+        Header!!
+        %input{:type=>'button', :class=>'close', :value=>"x", "data-dismiss"=>"modal", "aria-hidden"=>"true"}
+    .modal-body
+      Este texto pertenece a la modal
+    .modal-footer
+      Footer de la modal !
+
+
       

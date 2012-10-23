@@ -1,0 +1,6 @@
+= semantic_form_for @category, :url => admin_category_path(@category), :method => :put do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :page
+    = hidden_field nil, nil, :name=>:page_id, :value=>@page_id
+  = f.button "Aceptar"

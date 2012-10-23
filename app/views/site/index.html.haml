@@ -7,5 +7,8 @@
 - elsif @event == "quienes-somos"    
   .center
     = render :partial => "about"    
-- elsif @event = "hogar" || @event = "bazar" || @event = "petit"
+- elsif @event == "hogar" || @event == "bazar" || @event == "petit"
   = render :partial => "site_sections"
+- elsif @event == "wedding-list"
+  .center
+    = render :partial => "wedding_list"
