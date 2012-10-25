@@ -199,3 +199,17 @@ body{margin:0}
 }
 .field.area .wedding-list{width: 355px !important; height: 200px !important;}
 .field.area .contact{width: 355px !important; height: 130px !important;}
+
+.modal{width: 630px; height: 550px;}
+.modal-header{height: 3%;}
+.modal-body{
+  height:68%;
+  .not-current-modal-image{display: none;}
+  }
+.modal-footer{
+  .images{
+    float:left;
+    width: 100%;
+    .one-footer-image{float: left; margin-right: 1%;}
+  }
+}

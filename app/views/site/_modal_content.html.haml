@@ -1,0 +1,17 @@
+.modal-header
+  %span{:class=>"code-lbl"}
+    Código 
+  %span{:class=>"code-value"}
+    = product.code
+  %input{:type=>'button', :class=>'close', :value=>"x", "data-dismiss"=>"modal", "aria-hidden"=>"true"}
+.modal-body
+  - product.photos.each_with_index do |photo, i|
+    - if i == 0
+      = image_tag photo.photo.url(:modal), :class=>"current-modal-image", :id=>"modal-image-"+photo.id.to_s
+    - else
+      = image_tag photo.photo.url(:modal), :class=>"not-current-modal-image", :id=>"modal-image-"+photo.id.to_s
+.modal-footer
+  .images
+    - product.photos.each do |photo|
+      .one-footer-image
+        = link_to image_tag(photo.photo.url(:modal_footer)), "", :photo_id => photo.id, :class=>"footer-image"

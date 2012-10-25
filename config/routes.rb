@@ -14,7 +14,7 @@ Gydobjetos::Application.routes.draw do
 
   root :to=> "site#index"
 
-  match '/load_section_photo', to: "site#load_section_photo", as: "load_section_photo"
+  match '/load_product', to: "site#load_product", as: "load_product"
   match '/new', to: "site#new", as: "email"
   match '/:event', to: "site#index", as: "index"
 

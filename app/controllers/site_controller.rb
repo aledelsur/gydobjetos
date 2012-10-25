@@ -1,4 +1,6 @@
 class SiteController < ApplicationController
+  
+  require 'will_paginate/array'
 
   def index
     if params[:event] == "quienes-somos"
@@ -12,15 +14,15 @@ class SiteController < ApplicationController
     elsif params[:event] == "hogar"
       @event = "hogar"
       @hogar_page = Page.find_by_key("hogar")
-      @products = @hogar_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page])
+      @products = @hogar_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
     elsif params[:event] == "bazar"
       @event = "bazar"
       @bazar_page = Page.find_by_key("bazar")
-      @products = @bazar_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page])
+      @products = @bazar_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
     elsif params[:event] == "petit"
       @event = "petit"
       @petit_page = Page.find_by_key("petit")
-      @products = @petit_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page])
+      @products = @petit_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
     elsif params[:event] == "wedding-list"
       @event = "wedding-list"
     else
@@ -42,10 +44,9 @@ class SiteController < ApplicationController
     render "index"
   end  
 
-  def load_section_photo
-    #me pide que levante el array, pero no. renderizar a otra vista con la modal solamente
-    @image = Photo.find(params[:id])
-    render :partial=>"site_sections"
+  def load_product
+    @product = Product.find(params[:id])
+    render :partial=>"load_product", :locals => {:product => @product}
   end
 
 end

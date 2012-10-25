@@ -9,29 +9,32 @@
         = image_tag "home-module-1.png"
     .right
       .images
-        - @products.each_with_index do |products, i|
+        - @products.each_with_index do |product, i|
           - if (i == 2 || i == 5 || i == 8 || i == 11)
             .one-image.last
-              = link_to image_tag(product.photos.first.url(:small)), "", :class=>"section-photo", :product_id=>product.id
+              = link_to(image_tag(product.photos.first.photo.url(:small)), "", :class=>"section-photo", :product_id=>product.id) if product.photos.first
+              =# link_to "producto "+i.to_s, "", :class=>"section-photo", :product_id=>product.id
           - else
             .one-image
-              = link_to image_tag(product.photos.first.url(:small)), "", :class=>"section-photo", :product_id=>product.id
+              = link_to(image_tag(product.photos.first.photo.url(:small)), "", :class=>"section-photo", :product_id=>product.id) if product.photos.first
+              =# link_to "producto "+i.to_s, "", :class=>"section-photo", :product_id=>product.id
       - if params[:page] == "1" || params[:page].nil?
-        = will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"", :page_links=>false
+        =# will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"", :page_links=>false
       - elsif params[:page] == @products.total_pages.to_s
-        = will_paginate @products, :next_label=>"", :previous_label=>"ANTERIOR", :page_links=>false  
+        =# will_paginate @products, :next_label=>"", :previous_label=>"ANTERIOR", :page_links=>false  
       - else
-        = will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"ANTERIOR", :page_links=>false  
+        =# will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"ANTERIOR", :page_links=>false  
       =#http://twitter.github.com/bootstrap/javascript.html
-  %div{id: 'myModal', :class => 'modal'}
-    .modal-header
-      %h3
-        Header!!
-        %input{:type=>'button', :class=>'close', :value=>"x", "data-dismiss"=>"modal", "aria-hidden"=>"true"}
-    .modal-body
-      Este texto pertenece a la modal
-    .modal-footer
-      Footer de la modal !
+      %div{id: 'myModal', :class => 'modal'}
+        .modal-header
+          %span{:class=>"code-lbl"}
+            Código 
+          %span{:class=>"code-value"}
+            = @product.code if @product
+          %input{:type=>'button', :class=>'close', :value=>"x", "data-dismiss"=>"modal", "aria-hidden"=>"true"}
+        .modal-body
+
+        .modal-footer
+          
 
 
-      
