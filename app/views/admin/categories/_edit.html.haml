@@ -1,0 +1,10 @@
+= semantic_form_for @category, :url => admin_category_path(@category), :method => :put do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :page
+  %fieldset.actions
+    %ol
+      %li#category_submit_action.action.input_action
+        %input{:name => "commit", :type => "submit", :value => "Guardar Category"}/
+      %li.cancel
+        = link_to "Cancelar", "/admin/categories?page_id=#{f.object.page_id}" 

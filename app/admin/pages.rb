@@ -9,6 +9,8 @@ ActiveAdmin.register Page do
   #     link_to "Subir/Bajar Fotos", admin_photos_path(:page_id => p.id) 
   #   end
   # end
+  
+  config.clear_sidebar_sections!
 
   index do 
     column :title

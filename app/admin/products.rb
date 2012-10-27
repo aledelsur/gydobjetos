@@ -23,6 +23,9 @@ ActiveAdmin.register Product do
 
   end
 
+  form do |f|                         
+    render "edit"                     
+  end  
 
   action_item :only => :index do 
     if params[:category_id]

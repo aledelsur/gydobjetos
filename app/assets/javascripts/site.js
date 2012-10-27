@@ -1,8 +1,8 @@
 $(document).ready(function(){
   
-  $('#slider').s3Slider({
-      timeOut: 2000
-  });
+  // $('#slider').s3Slider({
+  //     timeOut: 2000
+  // });
   
   $(".section-photo").live("click", function(){
     var product_id = $(this).attr("product_id");

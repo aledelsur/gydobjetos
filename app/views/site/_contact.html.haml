@@ -5,46 +5,46 @@
       .page-name
         Contacto
       .star-right
-    .clear
-  .left
-    .text
-      =# @contact_page.text.html_safe if @contact_page.text
-      No dudes en ponerte en contacto con nosotros! Mandanos un email y hacenos tu consulta o pedido.
-    %br
-    .contact-details
-      .row2
-        .label2
-          Teléfonos:
-        .value
-          = @contact_page.tel
-      .row2
-        .label2
-          Dirección:
-        .value
-          = @contact_page.contact_address
-      .row2
-        .label2
-          Email:
-        .value
-          = @contact_page.email
-    .line
-    = form_tag email_path, :class=>"contact-form" do
-      .fields
-        .label2
-          Nombre
-        .field.text
-          = text_field_tag :name
-        .label2
-          Email
-        .field.text
-          = text_field_tag :email
-        .label2
-          Mensaje
-        .field.area
-          = text_area_tag :content, nil, :class=>"contact"
-        .field.submit
-          = submit_tag "Enviar" 
-          = hidden_field nil, nil, :name => :contact
-  .right
-    .contact-image-frame
-      =image_tag "home-module-1.png"
+  .clear
+  .mid
+    .left
+      .text
+        = @contact_page.text.html_safe if @contact_page.text
+      %br
+      .contact-details
+        .row2
+          .label2
+            Teléfonos:
+          .value
+            = @contact_page.tel
+        .row2
+          .label2
+            Dirección:
+          .value
+            = @contact_page.contact_address
+        .row2
+          .label2
+            Email:
+          .value
+            = @contact_page.email
+      .line
+      = form_tag email_path, :class=>"contact-form" do
+        .fields
+          .label2
+            Nombre
+          .field.text
+            = text_field_tag :name
+          .label2
+            Email
+          .field.text
+            = text_field_tag :email
+          .label2
+            Mensaje
+          .field.area
+            = text_area_tag :content, nil, :class=>"contact"
+          .field.submit
+            =# submit_tag "Enviar" 
+            = image_submit_tag("enviar-btn.jpg")
+            = hidden_field nil, nil, :name => :contact
+    .right
+      

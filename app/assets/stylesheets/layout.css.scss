@@ -2,8 +2,12 @@
 
 .clear{clear: both;}
 
-body{margin:0}
+body{
+margin:0;
+background:#A4D3D7;
+}
 .wrapped{
+  background: white;
   .main-container{
     margin: auto;
     width: 980px;
@@ -48,7 +52,10 @@ body{margin:0}
   }
 
   .middle{
+
     background: url('middle-font.png') no-repeat scroll 0 50px transparent;
+    background-repeat: repeat-x;
+
     margin-bottom: 5px;
     .center{
       margin: auto;
@@ -74,7 +81,16 @@ body{margin:0}
         .module.last{margin:0px;}
       }
 
-      .frame.contact{height: 550px;}
+      .frame.contact{
+        height: 600px;
+        .mid{
+          overflow: hidden;
+          background-image: url("contacto-background.png");
+          background-repeat:no-repeat;
+          background-position: 350px -22px;
+          padding-left: 1%;
+        }
+      }
       .frame{
         padding: 1%;
         margin-bottom: 3%;
@@ -89,8 +105,15 @@ body{margin:0}
           .page-name{float: left; color: #A7DEE4; font-weight: bold;}
           
         }
+        .mid.about{
+          overflow: hidden;
+          background-image: url("quienes-somos-background.png");
+          background-repeat:no-repeat;
+          background-position: 350px -22px;
+          padding-left: 1%;
+        }
         .left{
-          width: 45%;
+          width: 50%;
           float: left;
           .text{font-size: 15px; color: #B5B5B4;}
           .contact-details{
@@ -125,14 +148,14 @@ body{margin:0}
         .right{
           float: right;
           width: 47%;
-          .contact-image-frame, .about-image-frame{
+          /*.about-image-frame{
             height: 370px;
             margin-bottom: 3%;
             padding: 1%;
             width: 90%;
             @include shadow;
             img{height: 369px; width: 331px;}
-          }
+          }*/
           .wedding-right-frame{
             margin-bottom: 3%;
             margin-left: 15%;
