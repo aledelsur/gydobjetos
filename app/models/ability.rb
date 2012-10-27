@@ -5,6 +5,9 @@ class Ability
     if user.has_role? :Admin
       can :manage, Page
       can :manage, Photo
+      can :manage, Category
+      can :manage, Product
+      can :manage, HomePhoto
     else
       can :manage, :all
     end

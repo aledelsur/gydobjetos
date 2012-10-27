@@ -1,2 +1,16 @@
+:css
+  body{
+    margin:0;
+  }
+  .entrar{
+    position: absolute;
+    background: transparent;
+    left: 628px;
+    top: 428px;
+    display: block;
+    width: 82px;
+    height: 27px;
+  }
 .welcome-image
-  = link_to "Entrar", root_path
+  = link_to "", root_path, :class=> "entrar"
+  = image_tag "entrar.jpg"
