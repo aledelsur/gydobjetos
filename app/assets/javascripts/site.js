@@ -16,7 +16,7 @@ $(document).ready(function(){
     $(".current-modal-image").hide();
     $(".current-modal-image").addClass("not-current-modal-image");
     $(".current-modal-image").removeClass("current-modal-image");
-    $("#modal-image-"+photo_id).show();
+    $("#modal-image-"+photo_id).fadeIn();
     $("#modal-image-"+photo_id).addClass("current-modal-image");
     return false;
   });

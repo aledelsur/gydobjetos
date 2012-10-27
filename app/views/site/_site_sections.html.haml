@@ -26,15 +26,7 @@
         =# will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"ANTERIOR", :page_links=>false  
       =#http://twitter.github.com/bootstrap/javascript.html
       %div{id: 'myModal', :class => 'modal'}
-        .modal-header
-          %span{:class=>"code-lbl"}
-            Código 
-          %span{:class=>"code-value"}
-            = @product.code if @product
-          %input{:type=>'button', :class=>'close', :value=>"x", "data-dismiss"=>"modal", "aria-hidden"=>"true"}
-        .modal-body
 
-        .modal-footer
           
 
 
