@@ -203,12 +203,18 @@ body{margin:0}
 .modal{width: 630px; height: 550px;}
 .modal-header{
   height: 3%;
+  border-bottom: 0;
+  padding: 0;
   .product-header{
+    margin-top: 3%;
     overflow: hidden;
+    padding-left: 3%;
+    padding-right: 3%;
+
     .image{
       float: left;
       width: 5%;
-      img{height: 32px;}
+      img{padding-top: 6px;}
     }
     .product-code{
       background-color: #f4fdfc; float: left; width: 93%; padding: 1%;

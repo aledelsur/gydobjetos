@@ -4,4 +4,8 @@ class Page < ActiveRecord::Base
   has_many :home_photos
   has_many :categories, :dependent => :destroy
 
+  def site_image
+    "#{self.key}-site-image.png"
+  end
+
 end

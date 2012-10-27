@@ -14,19 +14,18 @@ class SiteController < ApplicationController
     elsif params[:event] == "contacto"
       @event = "contacto"
       @contact_page = Page.find_by_key("contacto")
-
     elsif params[:event] == "hogar"
       @event = "hogar"
-      @hogar_page = Page.find_by_key("hogar")
-      @products = @hogar_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
+      @page = Page.find_by_key("hogar")
+      @products = @page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
     elsif params[:event] == "bazar"
       @event = "bazar"
-      @bazar_page = Page.find_by_key("bazar")
-      @products = @bazar_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
+      @page = Page.find_by_key("bazar")
+      @products = @page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
     elsif params[:event] == "petit"
       @event = "petit"
-      @petit_page = Page.find_by_key("petit")
-      @products = @petit_page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
+      @page = Page.find_by_key("petit")
+      @products = @page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
     elsif params[:event] == "wedding-list"
       @event = "wedding-list"
     else

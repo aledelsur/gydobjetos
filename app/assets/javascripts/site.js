@@ -21,9 +21,6 @@ $(document).ready(function(){
     return false;
   });
 
-  // $(".close-modal-window").live("click", function(){
-  //   $("#myModal").close();
-  // });
   
   
 });
