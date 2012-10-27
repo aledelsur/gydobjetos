@@ -1,6 +1,32 @@
 @import "twitter/bootstrap/bootstrap";
 @import "twitter/bootstrap/responsive";
 
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+  text-decoration: none;
+  color: white;
+  background-color: #B0A389;
+  background-color: #0081C2;
+  background-image: -moz-linear-gradient(top, #B0A389, #B0A389);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#B0A389), to(#B0A389));
+  background-image: -webkit-linear-gradient(top, #B0A389, #B0A389);
+  background-image: -o-linear-gradient(top, #B0A389, #B0A389);
+  background-image: linear-gradient(to bottom, #B0A389, #B0A389);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+  background-color: #0081C2;
+  background-image: -moz-linear-gradient(top, #B0A389, #B0A389);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#B0A389), to(#B0A389));
+  background-image: -webkit-linear-gradient(top, #B0A389, #B0A389);
+  background-image: -o-linear-gradient(top, #B0A389, #B0A389);
+  background-image: linear-gradient(to bottom, #B0A389, #B0A389);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+.dropdown-menu
+{
+  min-width: 90px;
+}
+
 // Set the correct sprite paths
 @iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings.png");
 @iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white.png");
