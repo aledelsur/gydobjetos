@@ -20,6 +20,10 @@ $(document).ready(function(){
     $("#modal-image-"+photo_id).addClass("current-modal-image");
     return false;
   });
+
+  // $(".close-modal-window").live("click", function(){
+  //   $("#myModal").close();
+  // });
   
   
 });
