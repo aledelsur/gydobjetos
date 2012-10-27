@@ -1,16 +1,30 @@
 :css
   body{
     margin:0;
+    position: fixed;
+    height:100%;
+    width: 100%;
   }
   .entrar{
     position: absolute;
     background: transparent;
-    left: 628px;
-    top: 428px;
+    left: 48%;
+    top: 54%;
     display: block;
     width: 82px;
     height: 27px;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+    color: #B0A389;
+  }
+  .entrar:hover{
+    text-decoration:  underline;
+  }
+  .welcome-image img{
+    height:100%;
+    width:100%;
   }
 .welcome-image
-  = link_to "", root_path, :class=> "entrar"
+  = link_to "Entrar", root_path, :class=> "entrar"
   = image_tag "entrar.jpg"

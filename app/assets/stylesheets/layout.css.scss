@@ -2,8 +2,12 @@
 
 .clear{clear: both;}
 
-body{margin:0}
+body{
+margin:0;
+background:#A4D3D7;
+}
 .wrapped{
+  background: white;
   .main-container{
     margin: auto;
     width: 980px;
@@ -48,7 +52,10 @@ body{margin:0}
   }
 
   .middle{
+
     background: url('middle-font.png') no-repeat scroll 0 50px transparent;
+    background-repeat: repeat-x;
+
     margin-bottom: 5px;
     .center{
       margin: auto;
