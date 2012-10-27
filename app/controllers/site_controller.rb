@@ -3,6 +3,10 @@ class SiteController < ApplicationController
   require 'will_paginate/array'
 
   def index
+    unless session[:not_first_time]
+      render "welcome_page", :layout => false
+      session[:not_first_time] = true
+    end
     if params[:event] == "quienes-somos"
       @event = "quienes-somos"
       @paginations = Photo.paginate :per_page => 12, :page => params[:page] #This array is for testing pagination. Will be deleted

@@ -16,14 +16,14 @@ body{margin:0}
       .buttons{
         .menu-star-separator{background-image:url('star.png'); float: left; height: 6px; margin-left: 10%; margin-right: 10%; margin-top: 5%; width: 5px;}
         .first-button{width: 115px; padding-bottom: 2%; padding-top: 2%; float: left;
-          span{color: #E4D32B; font-size: 13px;}}
+          span{color: #b0a389; font-size: 13px;}}
         .second-button{float: left; padding-bottom: 2%; padding-top: 2%; width: 78px;
-          span{color: #E4D32B; font-size: 13px;}}
+          span{color: #b0a389; font-size: 13px;}}
         .button{
           float: left;
           padding-bottom: 2%;
           padding-top: 2%;
-          span{color: #E4D32B; font-size: 13px;}
+          span{color: #b0a389; font-size: 13px;}
         }        
         a{text-decoration: none; font-size: 14px;}
       }
@@ -201,7 +201,23 @@ body{margin:0}
 .field.area .contact{width: 355px !important; height: 130px !important;}
 
 .modal{width: 630px; height: 550px;}
-.modal-header{height: 3%;}
+.modal-header{
+  height: 3%;
+  .product-header{
+    overflow: hidden;
+    .image{
+      float: left;
+      width: 5%;
+      img{height: 32px;}
+    }
+    .product-code{
+      background-color: #f4fdfc; float: left; width: 93%; padding: 1%;
+      a.close-modal-window{float: right; text-decoration: none; color: #9ae4e5; font-size: 18px;}
+      .code-lbl{color:#a5abab;}
+      .code-value{color:#9ae4e5;}
+    }
+  }
+}
 .modal-body{
   height:68%;
   .not-current-modal-image{display: none;}
@@ -212,4 +228,7 @@ body{margin:0}
     width: 100%;
     .one-footer-image{float: left; margin-right: 1%;}
   }
+}
+.modal-backdrop{
+  background-color: #FFF;
 }
