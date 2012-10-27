@@ -16,7 +16,7 @@
 .modal-body
   - product.photos.each_with_index do |photo, i|
     - if i == 0
-      = image_tag photo.photo.url(:modal), :class=>"current-modal-image", :id=>"modal-image-"+photo.id.to_s
+      = image_tag photo.photo.url(:modal), :class=>"current-modal-image first-img", :id=>"modal-image-"+photo.id.to_s
     - else
       = image_tag photo.photo.url(:modal), :class=>"not-current-modal-image", :id=>"modal-image-"+photo.id.to_s
 .modal-footer

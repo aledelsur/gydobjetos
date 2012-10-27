@@ -58,8 +58,8 @@ body{margin:0}
         border-radius: 2px 2px 2px 2px;
         padding: 1%;
         margin-bottom: 3%;
-        height: 250px;
-        img{width: 784px; height: 251px;}
+        height: 350px;
+        img{width: 784px;}
       }
       .modules{
         .module{
@@ -206,7 +206,7 @@ body{margin:0}
       color: #FFF;
       margin: auto;
       padding-top: 3%;
-      width: 65%;
+      width: 59%;
       .left{width: 50%; float: left;}
       .right{width: 50%; float: right; text-align: right;
         .follow-us img{width: 30px;}
@@ -225,9 +225,8 @@ body{margin:0}
 .field.area .wedding-list{width: 355px !important; height: 200px !important;}
 .field.area .contact{width: 355px !important; height: 130px !important;}
 
-.modal{width: 630px; height: 550px;}
+.modal{width: 630px; border: 1px solid rgba(0, 0, 0, 0.2); margin: -310px 0 0 -280px;}
 .modal-header{
-  height: 3%;
   border-bottom: 0;
   padding: 0;
   .product-header{
@@ -250,7 +249,6 @@ body{margin:0}
   }
 }
 .modal-body{
-  height:68%;
   .not-current-modal-image{display: none;}
   }
 .modal-footer{
