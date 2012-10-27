@@ -36,14 +36,36 @@
           .right-menu
             .line-right
             .buttons
-              .button
-                = link_to raw("<span>HOGAR</span>"), index_path("hogar"), :class => ("selected" if @event == "hogar")
-              .menu-star-separator
-              .button
-                = link_to raw("<span>BAZAR</span>"), index_path("bazar"), :class => ("selected" if @event == "bazar")
-              .menu-star-separator
-              .button
-                = link_to raw("<span>PETIT</span>"), index_path("petit"), :class => ("selected" if @event == "petit")
+              .btn-group.menu-items
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %span HOGAR
+                %ul.dropdown-menu
+                  %li 
+                    = link_to "Todos", index_path("hogar")
+                  %li.divider
+                  - @hogar_categories.each do |category|
+                    %li 
+                      = link_to "Velez", "#"
+              .btn-group.menu-items
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %span BAZAR
+                %ul.dropdown-menu
+                  %li 
+                    = link_to "Todos", index_path("bazar")
+                  %li.divider
+                  - @bazar_categories.each do |category|
+                    %li 
+                      = link_to "Bazar", "#"
+              .btn-group.menu-items
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %span PETIT
+                %ul.dropdown-menu
+                  %li 
+                    = link_to "Todos", index_path("petit")
+                  %li.divider
+                  - @petit_categories.each do |category|
+                    %li 
+                      = link_to category.name, "#"
             .clear
             .line-right
       .middle
