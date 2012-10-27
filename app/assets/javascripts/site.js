@@ -11,6 +11,16 @@ $(document).ready(function(){
     return false;
   });
 
+  // $('.footer-image').mouseover(function() {
+  //   var photo_id = $(this).attr("photo_id");
+  //   $(".current-modal-image").hide();
+  //   $(".current-modal-image").addClass("not-current-modal-image");
+  //   $(".current-modal-image").removeClass("current-modal-image");
+  //   $("#modal-image-"+photo_id).fadeIn();
+  //   $("#modal-image-"+photo_id).addClass("current-modal-image");
+  //   return false;    
+  // });
+
   $(".footer-image").live("click", function(){
     var photo_id = $(this).attr("photo_id");
     $(".current-modal-image").hide();
@@ -21,6 +31,5 @@ $(document).ready(function(){
     return false;
   });
 
-  
   
 });

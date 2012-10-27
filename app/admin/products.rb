@@ -11,8 +11,6 @@ ActiveAdmin.register Product do
 
   index do
     column :code
-    column :title
-    column :text
     column "" do |product|
       link_to "Fotos", admin_photos_path(:product_id => product.id)
     end

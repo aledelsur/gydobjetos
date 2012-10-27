@@ -86,7 +86,7 @@ body{margin:0}
             .row2{
               overflow: hidden;
               margin-bottom: 2%;
-              .label2{color: #C93092; float: left; width: 100px;}
+              .label2{color: #C65187; float: left; width: 100px;}
               .value{color: #B5B5B4; float: left; width: 248px;}
             }
           }
@@ -152,7 +152,7 @@ body{margin:0}
         .left{
           float: left;
           width: 30%;
-          .site-image{margin-bottom: 5%; text-align: center;}
+          .site-image{margin-bottom: 20%; text-align: center;}
           .text{font-size: 14px; color: #B5B5B4; text-align: center; margin-bottom: 5%;}
           .news{}
         }
@@ -242,6 +242,7 @@ body{margin:0}
   .not-current-modal-image{display: none;}
   }
 .modal-footer{
+  border-top: 0;
   .images{
     float:left;
     width: 100%;
