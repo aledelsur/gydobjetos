@@ -25,6 +25,10 @@ ActiveAdmin.register Category do
     end
   end
 
+  form do |f|                         
+    render "edit"                     
+  end  
+
   controller do
 
     def page_categories
@@ -38,19 +42,19 @@ ActiveAdmin.register Category do
       @pages = Page.all
     end
 
+    def edit
+      @categories = Category.all
+    end
+
     def create
       @category = Category.create(params[:category])
       redirect_to admin_categories_path(:page_id => params[:category][:page_id])
     end
 
-    def edit
-      @page_id = @category.page_id
-    end
-
     def update
       @category = Category.find(params[:id])
       @category.update_attributes params[:category]
-      redirect_to admin_categories_path(:page_id => params[:category][:page_id])
+      redirect_to admin_categories_path(:page_id => @category.page_id)
     end
 
     def destroy
