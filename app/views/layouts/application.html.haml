@@ -29,14 +29,14 @@
               .menu-star-separator
               .second-button
                 = link_to raw("<span>CONTACTO</span>"), index_path("contacto"), :class => ("selected" if @event == "contacto")
-            .clear
+              .clear
             .line-left
           .logo
             = link_to((image_tag "logo.png"), root_path)
           .right-menu
             .line-right
             .buttons
-              .btn-group.menu-items
+              .btn-group.menu-items.button
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span HOGAR
                 %ul.dropdown-menu
@@ -46,7 +46,8 @@
                   - @hogar_categories.each do |category|
                     %li 
                       = link_to "Velez", "#"
-              .btn-group.menu-items
+              .menu-star-separator
+              .btn-group.menu-items.button
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span BAZAR
                 %ul.dropdown-menu
@@ -56,7 +57,8 @@
                   - @bazar_categories.each do |category|
                     %li 
                       = link_to "Bazar", "#"
-              .btn-group.menu-items
+              .menu-star-separator
+              .btn-group.menu-items.button
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %span PETIT
                 %ul.dropdown-menu
