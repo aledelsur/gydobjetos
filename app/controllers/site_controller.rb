@@ -25,9 +25,9 @@ class SiteController < ApplicationController
     elsif params[:event] == "petit"
       @event = "petit"
       @page = Page.find_by_key("petit")
-      @products = @page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
-    elsif params[:event] == "wedding-list"
-      @event = "wedding-list"
+      @products = @page.categories.collect{|c| c.products}.flatten.paginate(:per_page => 12, :page => params[:page])
+    elsif params[:event] == "listas-de-casamiento"
+      @event = "listas-de-casamiento"
     else
       @event = "home"
       @home_photos = HomePhoto.all

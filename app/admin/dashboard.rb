@@ -2,11 +2,14 @@ ActiveAdmin.register_page "Dashboard" do
 
   menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
 
+
   content :title => proc{ I18n.t("active_admin.dashboard") } do
     div :class => "blank_slate_container", :id => "dashboard_default_message" do
       span :class => "blank_slate" do
-        span "Welcome to Active Admin. This is the default dashboard page."
-        small "To add dashboard sections, checkout 'app/admin/dashboards.rb'"
+        span "Recordar:"
+        div 
+          ul 
+            li "Para que un producto pueda ser visto en la pagina debe tener por lo menos una foto cargada."
       end
     end
 

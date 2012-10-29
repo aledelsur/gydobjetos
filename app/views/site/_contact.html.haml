@@ -43,8 +43,7 @@
           .field.area
             = text_area_tag :content, nil, :class=>"contact"
           .field.submit
-            =# submit_tag "Enviar" 
-            = image_submit_tag("enviar-btn.jpg")
+            = image_submit_tag("enviar-btn.jpg", :class => "enviar-btn")
             = hidden_field nil, nil, :name => :contact
     .right
       

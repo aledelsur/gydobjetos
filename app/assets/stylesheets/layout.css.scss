@@ -91,6 +91,13 @@ background:#A4D3D7;
           padding-left: 1%;
         }
       }
+      .frame.about .mid{
+        overflow: hidden;
+        background-image: url("quienes-somos-background.png");
+        background-repeat:no-repeat;
+        background-position: 350px -22px;
+        padding-left: 1%;
+      }
       .frame{
         padding: 1%;
         margin-bottom: 3%;
@@ -104,13 +111,6 @@ background:#A4D3D7;
 
           .page-name{float: left; color: #A7DEE4; font-weight: bold;}
           
-        }
-        .mid.about{
-          overflow: hidden;
-          background-image: url("quienes-somos-background.png");
-          background-repeat:no-repeat;
-          background-position: 350px -22px;
-          padding-left: 1%;
         }
         .left{
           width: 50%;
@@ -141,7 +141,7 @@ background:#A4D3D7;
                 padding: 2px;
                 width: 228px;
               }
-              
+              .enviar-btn:hover{opacity: 0.5;}
             }
           }
         }
@@ -179,7 +179,7 @@ background:#A4D3D7;
     .site-sections-center{
       margin: auto;
       width: 800px;
-      height: 700px;
+      height: 840px;
       @include shadow;
       .content{
         overflow: hidden;
@@ -213,7 +213,7 @@ background:#A4D3D7;
           font-size: 14px; 
           width: 97%;
           margin-left: 2%;
-          a{text-decoration: none;}
+          a{text-decoration: none; color: #b0a389;}
           .previous_page{float: left;}
           .next_page{float: right;}
         }
