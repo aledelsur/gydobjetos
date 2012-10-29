@@ -248,15 +248,17 @@ background:#A4D3D7;
 .field.area .wedding-list{width: 355px !important; height: 200px !important;}
 .field.area .contact{width: 355px !important; height: 130px !important;}
 
-.modal{width: 630px; border: 1px solid rgba(0, 0, 0, 0.2); margin: -310px 0 0 -280px;}
+.modal{
+  width: 637px; border: 1px solid rgba(0, 0, 0, 0.2); margin: -310px 0 0 -280px;
+  .hide.fade.in{width: 630px;}
+}
 .modal-header{
   border-bottom: 0;
   padding: 0;
   .product-header{
     margin-top: 3%;
     overflow: hidden;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 15px;
 
     .image{
       float: left;
@@ -264,7 +266,13 @@ background:#A4D3D7;
       img{padding-top: 6px;}
     }
     .product-code{
-      background-color: #f4fdfc; float: left; width: 93%; padding: 1%;
+      /*background-color: #f4fdfc; float: left; width: 93%; padding: 1%;*/
+      width: 565px;
+      height: 32px;
+      background-color: #f4fdfc; 
+      float: left;
+      padding-right: 6px;
+      padding-top: 5px;
       a.close-modal-window{float: right; text-decoration: none; color: #9ae4e5; font-size: 18px;}
       .code-lbl{color:#a5abab;}
       .code-value{color:#9ae4e5;}
@@ -285,3 +293,4 @@ background:#A4D3D7;
 .modal-backdrop{
   background-color: #FFF;
 }
+.first-img{ width: 600px; height: 400px;}
