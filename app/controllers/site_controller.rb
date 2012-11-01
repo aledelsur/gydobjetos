@@ -34,6 +34,7 @@ class SiteController < ApplicationController
     end  
   end
 
+  #emails
   def new
     if params[:wedding_list]
       Contact.new_wedding_list(params).deliver
@@ -42,9 +43,9 @@ class SiteController < ApplicationController
     elsif params[:contact]
       Contact.new_contact(params).deliver
       flash[:notice] = "Gracias! Tu consulta fue enviada.  Te responderemos a la brevedad."
-      @event = "contact"
+      @event = "contacto"
     end
-    render "index"
+    redirect_to index_path(:event => @event)
   end  
 
   def load_product

@@ -24,4 +24,8 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
+group :development do
+  gem "letter_opener"
+end
+
 gem 'jquery-rails'
