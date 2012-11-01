@@ -36,10 +36,10 @@
           .right-menu
             .line-right
             .buttons
-              .btn-group.menu-items.button
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              .btn-group.menu-items.button{:id => "1"}
+                %a.dropdown-toggle{:href => "#"}
                   %span HOGAR
-                %ul.dropdown-menu
+                %ul.dropdown-menu{:id => "dropdown-1"}
                   %li 
                     = link_to "Todos", index_path("hogar")
                   %li.divider
@@ -47,10 +47,10 @@
                     %li 
                       = link_to "Velez", index_path(:event =>"hogar", :category_id => category.id)
               .menu-star-separator
-              .btn-group.menu-items.button
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              .btn-group.menu-items.button{:id => "2"}
+                %a.dropdown-toggle{:href => "#"}
                   %span BAZAR
-                %ul.dropdown-menu
+                %ul.dropdown-menu{:id => "dropdown-2"}
                   %li 
                     = link_to "Todos", index_path("bazar")
                   %li.divider
@@ -58,10 +58,10 @@
                     %li 
                       = link_to "Bazar", index_path(:event => "bazar", :category_id => category.id)
               .menu-star-separator
-              .btn-group.menu-items.button
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              .btn-group.menu-items.button{:id => "3"}
+                %a.dropdown-toggle{:href => "#"}
                   %span PETIT
-                %ul.dropdown-menu
+                %ul.dropdown-menu{:id => "dropdown-3"}
                   %li 
                     = link_to "Todos", index_path("petit")
                   %li.divider

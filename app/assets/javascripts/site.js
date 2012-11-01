@@ -1,9 +1,5 @@
 $(document).ready(function(){
   
-  // $('#slider').s3Slider({
-  //     timeOut: 2000
-  // });
-  
   $(".section-photo").live("click", function(){
     var product_id = $(this).attr("product_id");
     $.get("/load_product", {id:product_id}, null, "script");
@@ -20,6 +16,15 @@ $(document).ready(function(){
   //   $("#modal-image-"+photo_id).addClass("current-modal-image");
   //   return false;    
   // });
+  
+  $(".btn-group.menu-items.button").live("mouseover", function(){
+    var id = "#dropdown-" + $(this).attr("id");
+    $(id).show();
+  });
+  $(".btn-group.menu-items.button").live("mouseout", function(){
+    var id = "#dropdown-" + $(this).attr("id");
+    $(id).hide();
+  });
 
   $(".footer-image").live("click", function(){
     var photo_id = $(this).attr("photo_id");
@@ -33,11 +38,13 @@ $(document).ready(function(){
     return false;
   });
 
-    $('#myModal').on('hidden', function () {
-      a = $(".first-img");
-      a.removeClass("not-current-modal-image");
-      a.addClass("current-modal-image");
-      a.show();
-    })
+  $('#myModal').on('hidden', function () {
+    a = $(".first-img");
+    a.removeClass("not-current-modal-image");
+    a.addClass("current-modal-image");
+    a.show();
+  });
+
+
   
 });
