@@ -10,7 +10,7 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0" }
 
     = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
-    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "bootstrap_and_overrides", :media => "all"
 
     = javascript_include_tag "application"
 
@@ -45,7 +45,7 @@
                   %li.divider
                   - @hogar_categories.each do |category|
                     %li 
-                      = link_to "Velez", "#"
+                      = link_to "Velez", index_path(:event =>"hogar", :category_id => category.id)
               .menu-star-separator
               .btn-group.menu-items.button
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -56,7 +56,7 @@
                   %li.divider
                   - @bazar_categories.each do |category|
                     %li 
-                      = link_to "Bazar", "#"
+                      = link_to "Bazar", index_path(:event => "bazar", :category_id => category.id)
               .menu-star-separator
               .btn-group.menu-items.button
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -67,7 +67,7 @@
                   %li.divider
                   - @petit_categories.each do |category|
                     %li 
-                      = link_to category.name, "#"
+                      = link_to category.name, index_path(:event =>"petit", :category_id => category.id)
             .clear
             .line-right
       .middle

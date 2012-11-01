@@ -9,12 +9,28 @@
 .clear
 .modules
   .module
-    = image_tag "home-module-1.png"
-    = link_to "Lista de Casamientos", index_path("wedding-list")
+    %div 
+      = image_tag "home-module-1.png"
+      .clean
+    %a{:href => index_path("wedding-list"), :class=>"module-a"} 
+      Lista de Casamientos
+    .clean
   .module
-    = image_tag "home-module-2.png"
-    Novedades
+    %div 
+      = image_tag("home-module-2.png")
+      .clean
+    %a{:href => "#"}
+      Novedades
+      %br
+      (Próximamente)
+    .clean
   .module.last
-    = image_tag "home-module-3.png"
-    Tus Regalos personalizados
+    %div 
+      = image_tag("home-module-3.png")
+      .clean
+    %a{:href => "#"}
+      Tus Regalos personalizados
+      %br
+      (Próximamente)
+    .clean
 .clear

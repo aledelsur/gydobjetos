@@ -1,10 +1,11 @@
- @import "mixins";
+@import "mixins";
 
 .clear{clear: both;}
 
 body{
-margin:0;
-background:#A4D3D7;
+  margin:0;
+  background:#A4D3D7;
+  font-family: 'Adobe Caslon Pro', Georgia, Times New Roman, Times, serif;
 }
 .wrapped{
   background: white;
@@ -30,7 +31,15 @@ background:#A4D3D7;
           font-size: 13px;
           
         }
-        .menu-star-separator{background-image:url('star.png'); float: left; height: 6px; margin-left: 10%; margin-right: 10%; margin-top: 5%; width: 5px;}
+        .menu-star-separator{
+          background-image: url("star.png");
+          float: left;
+          height: 6px;
+          margin-left: 7%;
+          margin-right: 7%;
+          margin-top: 5%;
+          width: 5px;
+        }
         .first-button{width: 115px; padding-bottom: 2%; padding-top: 2%; float: left;
           span{color: #b0a389; font-size: 13px;}}
         .second-button{float: left; padding-bottom: 2%; padding-top: 2%; width: 78px;
@@ -77,6 +86,17 @@ background:#A4D3D7;
           margin-right: 32px;
           padding: 10px;
           width: 225px;
+          text-align: center;
+          a, span{
+            text-decoration: none;
+            font-style: italic;
+            color: #B0A389;
+            &.module-a{
+              position:relative;
+              top: 12px;
+            }
+          }
+
         }
         .module.last{margin:0px;}
       }
@@ -109,7 +129,9 @@ background:#A4D3D7;
           .content.contact{margin-bottom: auto; margin-left: 44%; margin-right: auto; padding-top: 15px; overflow: hidden; width: 155px;}
           .content.wedding-list{margin-bottom: auto; margin-left: 38%; margin-right: auto; padding-top: 15px; overflow: hidden; width: 205px;}
 
-          .page-name{float: left; color: #A7DEE4; font-weight: bold;}
+          .page-name{float: left;
+           color: #A7DEE4;
+           font-size: 14pt;}
           
         }
         .mid.about{
@@ -252,6 +274,7 @@ background:#A4D3D7;
   display: none;
   @include shadow;
   border-radius: 2px 2px 2px 2px;
+  box-shadow: initial;
 }
 .field.area .wedding-list{width: 355px !important; height: 200px !important;}
 .field.area .contact{width: 355px !important; height: 130px !important;}

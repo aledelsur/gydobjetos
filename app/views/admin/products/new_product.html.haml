@@ -8,6 +8,6 @@
       %li#category_submit_action.action.input_action
         %input{:name => "commit", :type => "submit", :value => "Guardar Producto"}/
       %li.cancel
-        = link_to "Cancelar", "/admin/products?page_id=#{f.object.category_id}"
+        = link_to "Cancelar", "/admin/products?page_id=#{@category_id}"
   
 
