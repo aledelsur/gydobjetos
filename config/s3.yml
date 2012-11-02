@@ -1,0 +1,12 @@
+development:
+  bucket: gydobjetos
+  access_key_id: AKIAI6SB6MWVNUJFATBA
+  secret_access_key: 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
+test:
+  bucket: gydobjetos
+  access_key_id: AKIAI6SB6MWVNUJFATBA
+  secret_access_key: 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
+production:
+  bucket: gydobjetos
+  access_key_id: AKIAI6SB6MWVNUJFATBA
+  secret_access_key: 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
