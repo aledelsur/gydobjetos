@@ -15,14 +15,11 @@ class SiteController < ApplicationController
         @contact_page = Page.find_by_key("contacto")
       elsif params[:event] == "hogar"
         @page = Page.find_by_key("hogar")
-        #@products = @page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
       elsif params[:event] == "bazar"
         @page = Page.find_by_key("bazar")
-        #@products = @page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
       elsif params[:event] == "petit"
         @page = Page.find_by_key("petit")
-        #@products = @page.categories.collect{|c| c.products}.paginate(:per_page => 12, :page => params[:page]).flatten
-      else
+      elsif not @event == "wedding-list"
         @event = "home"
         @home_photos = HomePhoto.all
       end

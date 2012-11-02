@@ -45,7 +45,7 @@
                   %li.divider
                   - @hogar_categories.each do |category|
                     %li 
-                      = link_to "Velez", index_path(:event =>"hogar", :category_id => category.id)
+                      = link_to category.name, index_path(:event =>"hogar", :category_id => category.id)
               .menu-star-separator
               .btn-group.menu-items.button{:id => "2"}
                 %a.dropdown-toggle{:href => "#"}
@@ -56,7 +56,7 @@
                   %li.divider
                   - @bazar_categories.each do |category|
                     %li 
-                      = link_to "Bazar", index_path(:event => "bazar", :category_id => category.id)
+                      = link_to category.name, index_path(:event => "bazar", :category_id => category.id)
               .menu-star-separator
               .btn-group.menu-items.button{:id => "3"}
                 %a.dropdown-toggle{:href => "#"}
