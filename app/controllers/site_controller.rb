@@ -19,7 +19,7 @@ class SiteController < ApplicationController
         @page = Page.find_by_key("bazar")
       elsif params[:event] == "petit"
         @page = Page.find_by_key("petit")
-      elsif not @event == "wedding-list"
+      elsif not @event == "listas-de-casamiento"
         @event = "home"
         @home_photos = HomePhoto.all
       end
@@ -32,7 +32,7 @@ class SiteController < ApplicationController
     if params[:wedding_list]
       Contact.new_wedding_list(params).deliver
       flash[:notice] = "Gracias! Tu mail fue enviado. Te responderemos a la brevedad."
-      @event = "wedding-list"
+      @event = "listas-de-casamiento"
     elsif params[:contact]
       Contact.new_contact(params).deliver
       flash[:notice] = "Gracias! Tu consulta fue enviada. Te responderemos a la brevedad."
