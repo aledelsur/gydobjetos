@@ -6,7 +6,8 @@
         Quienes Somos
       .star-right
     .clear
-  .mid
-    .text
-      = @about_page.text.html_safe if @about_page.text
-      
+  .mid.about
+    .left
+      .text
+        = @about_page.text.html_safe if @about_page.text
+    .clean

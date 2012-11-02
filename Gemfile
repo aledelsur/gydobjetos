@@ -11,7 +11,7 @@ gem 'capistrano'
 gem "jquery-ui-rails"
 gem 'rich'
 gem 'will_paginate', '~> 3.0.0'
-#gem 'aws-sdk', '~> 1.3.4'
+gem 'aws-sdk', '~> 1.3.4'
 gem 'sqlite3'
 gem 'thin'
 gem 'flash_cookie_session'
@@ -22,6 +22,11 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
+end
+gem 'twitter-bootstrap-rails'
+
+group :development do
+  gem "letter_opener"
 end
 
 gem 'jquery-rails'

@@ -45,5 +45,5 @@
           .field.submit
             = image_submit_tag("enviar-btn.jpg", :class => "enviar-btn")
             = hidden_field nil, nil, :name => :contact
-    .right
+  = flash[:notice]
       
