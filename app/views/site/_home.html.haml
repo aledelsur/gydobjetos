@@ -1,0 +1,41 @@
+.home-photo
+  #slider
+    %ul{:id => "sliderContent"}
+      - @home_photos.each do |hp|
+        %li.sliderImage
+          =image_tag(hp.photo.url(:home))
+          %span
+      .clear.sliderImage
+.clear
+.modules
+  .module
+    %div 
+      = image_tag "home-module-1.png"
+      .clean
+    %a{:href => index_path("wedding-list"), :class=>"module-a"} 
+      Lista de Casamientos
+    .clean
+  .module
+    %div 
+      = image_tag("home-module-2.png")
+      .clean
+    %a{:href => "#"}
+      Novedades
+      %br
+      (Próximamente)
+    .clean
+  .module.last
+    %div 
+      = image_tag("home-module-3.png")
+      .clean
+    %a{:href => "#"}
+      Tus Regalos personalizados
+      %br
+      (Próximamente)
+    .clean
+.clear
+
+:javascript
+  $('#slider').s3Slider({
+      timeOut: 2000
+  });

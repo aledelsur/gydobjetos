@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920190339) do
+ActiveRecord::Schema.define(:version => 20121022200338) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120920190339) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "role"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
@@ -46,56 +47,56 @@ ActiveRecord::Schema.define(:version => 20120920190339) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "page_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "home_photos", :force => true do |t|
-    t.text     "text"
-    t.integer  "position"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.text     "text"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-  end
-
-  create_table "options", :force => true do |t|
-    t.string   "key"
-    t.string   "value"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "page_modules", :force => true do |t|
-    t.text     "text"
-    t.string   "title"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "text"
-    t.string   "meta_title"
-    t.string   "meta_description"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
     t.string   "key"
     t.string   "contact_address"
-    t.float    "contact_latitude"
-    t.float    "contact_longitude"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "meta_title"
+    t.string   "meta_description"
+    t.string   "meta_keywords"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "tel"
+    t.string   "email"
   end
 
-  create_table "professionals", :force => true do |t|
-    t.string   "name"
-    t.string   "title"
-    t.text     "text"
-    t.integer  "position"
+  create_table "photos", :force => true do |t|
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "product_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.string   "code"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "rich_rich_files", :force => true do |t|
@@ -109,14 +110,6 @@ ActiveRecord::Schema.define(:version => 20120920190339) do
     t.integer  "owner_id"
     t.text     "uri_cache"
     t.string   "simplified_type",        :default => "file"
-  end
-
-  create_table "site_comments", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end

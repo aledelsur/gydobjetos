@@ -1,0 +1,26 @@
+.modal-header
+  .product-header
+    .image
+      - if product.category.page.key == "hogar"
+        = image_tag "hogar-icon.jpg"
+      - elsif product.category.page.key == "bazar"
+        = image_tag "bazar-icon.jpg"
+      - elsif product.category.page.key == "petit"
+        = image_tag "petit-icon.jpg"
+    .product-code
+      %span{:class=>"code-lbl"}
+        Código 
+      %span{:class=>"code-value"}
+        = product.code
+      =link_to "x", "", :class=>"close-modal-window", "data-dismiss"=>"modal", "aria-hidden"=>"true"
+.modal-body
+  - product.photos.each_with_index do |photo, i|
+    - if i == 0
+      = image_tag photo.photo.url(:modal), :class=>"current-modal-image first-img", :id=>"modal-image-"+photo.id.to_s
+    - else
+      = image_tag photo.photo.url(:modal), :class=>"not-current-modal-image", :id=>"modal-image-"+photo.id.to_s
+.modal-footer
+  .images
+    - product.photos.each do |photo|
+      .one-footer-image
+        = link_to image_tag(photo.photo.url(:modal_footer)), "", :photo_id => photo.id, :class=>"footer-image"

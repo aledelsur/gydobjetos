@@ -1,0 +1,13 @@
+= semantic_form_for :product, :url => admin_products_path do |f|
+  = f.inputs do
+    = f.input :code
+    = f.input :category_id, :as => :select, :input_html => {:disabled => true}, :collection => @categories, :selected => @category_id
+    = hidden_field nil, nil, :name => "product[category_id]", :value => @category_id
+  %fieldset.actions
+    %ol
+      %li#category_submit_action.action.input_action
+        %input{:name => "commit", :type => "submit", :value => "Guardar Producto"}/
+      %li.cancel
+        = link_to "Cancelar", "/admin/products?page_id=#{@category_id}"
+  
+

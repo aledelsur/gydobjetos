@@ -1,0 +1,14 @@
+- if @event == "home"   
+  .center
+    = render :partial => "home"
+- elsif @event == "contacto"    
+  .center
+    = render :partial => "contact"
+- elsif @event == "quienes-somos"    
+  .center
+    = render :partial => "about"    
+- elsif @event == "hogar" || @event == "bazar" || @event == "petit"
+  = render :partial => "site_sections", :locals => {:page=>@page}
+- elsif @event == "wedding-list"
+  .center
+    = render :partial => "wedding_list"
