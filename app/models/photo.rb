@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
   belongs_to :product
 
   has_attached_file :photo,
-   :styles => { :small => "170x200#", :modal => "600x400#", :modal_footer => "85x80#"}, 
+   :styles => { :small => "170x200#", :modal => "507x500#", :modal_footer => "85x80#"}, 
     :storage => :s3,
     :bucket => "gydobjetos",
     :s3_options     => {
