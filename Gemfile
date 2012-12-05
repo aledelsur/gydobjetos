@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source :rubygems
 
 gem 'rails', '3.2.8'
 
@@ -23,9 +24,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'less'
   gem "twitter-bootstrap-rails"
-  gem 'libv8', '3.3.10.4'
-  gem 'therubyracer', '0.10.2', :require => 'v8'
 end
+
+gem 'therubyracer'
+gem 'libv8', '3.3.10.4'
 
 
 group :development do
