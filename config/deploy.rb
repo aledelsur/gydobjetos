@@ -25,7 +25,7 @@ end
 namespace(:customs) do
   task :config, :roles => :app do
     run <<-CMD
-      ln -nfs #{shared_path}/config/database.yml #{current_path}/config/database.yml
+      ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml
     CMD
   end
 end
@@ -80,11 +80,10 @@ namespace :log do
   task :clear, :roles => :app do
     run  "cat /dev/null > #{shared_path}/log/#{rails_env}.log"
   end
-
-  after "deploy:update_code", "bundle:install"
-  after "deploy:update_code", "customs:config"
-  after "deploy", "deploy:cleanup"
 end
+after "deploy:finalize_update", "bundle:install"
+after "deploy:finalize_update", "customs:config"
+after "deploy", "deploy:cleanup"
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
