@@ -24,9 +24,10 @@ group :assets do
   gem 'less'
   gem "twitter-bootstrap-rails"
   gem 'libv8', '3.3.10.4'
-  gem 'therubyracer', '0.10.2'
-  gem 'less-rails', '2.2.6'
 end
+
+gem 'therubyracer', '0.10.2'
+gem 'less-rails', '2.2.6'
 
 group :development do
   gem "letter_opener"
