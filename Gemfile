@@ -25,6 +25,7 @@ group :assets do
   gem "twitter-bootstrap-rails"
   gem 'libv8', '3.3.10.4'
   gem 'therubyracer', '0.10.2'
+  gem 'less-rails', '2.2.6'
 end
 
 group :development do
