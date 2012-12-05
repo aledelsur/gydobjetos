@@ -23,8 +23,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'less'
 
-  gem "therubyracer"
-  gem "less-rails", :git => "https://github.com/metaskills/less-rails"
+  gem 'therubyrhino'
   gem "twitter-bootstrap-rails"
 end
 
