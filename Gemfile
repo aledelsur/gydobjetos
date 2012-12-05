@@ -24,7 +24,6 @@ group :assets do
   gem 'less'
   gem "twitter-bootstrap-rails"
   gem 'libv8', '3.3.10.4'
-  gem 'less-rails-bootstrap'
   gem 'therubyracer', '0.10.2', :require => 'v8'
 end
 
