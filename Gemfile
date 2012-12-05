@@ -26,7 +26,6 @@ group :assets do
   gem 'libv8', '3.3.10.4'
   gem 'less-rails-bootstrap'
   gem 'therubyracer', '0.10.2'
-  gem 'less-rails', '2.2.6'
 end
 
 
