@@ -23,6 +23,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'less'
   gem "twitter-bootstrap-rails"
+  gem 'libv8', '3.3.10.4'
+  gem 'therubyracer', '0.10.2'
 end
 
 group :development do
