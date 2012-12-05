@@ -13,6 +13,22 @@ set :scm_username, "lucasminissale"
 default_run_options[:pty] = true
 set :rvm_ruby_string, 'ruby-1.9.3-p194@gyd'
 
+namespace :bundle do
+
+  desc "run bundle install and ensure all gem requirements are met"
+  task :install do
+    run "cd #{current_path} && bundle install  --without=test"
+  end
+
+end
+
+namespace(:customs) do
+  task :config, :roles => :app do
+    run <<-CMD
+      ln -nfs #{shared_path}/config/database.yml #{current_path}/config/database.yml
+    CMD
+  end
+end
 
 namespace :log do
 
@@ -64,6 +80,10 @@ namespace :log do
   task :clear, :roles => :app do
     run  "cat /dev/null > #{shared_path}/log/#{rails_env}.log"
   end
+
+  after "deploy:update_code", "bundle:install"
+  after "deploy:update_code", "customs:config"
+  after "deploy", "deploy:cleanup"
 end
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
