@@ -20,7 +20,7 @@
     - else
       = image_tag photo.photo.url(:modal), :class=>"not-current-modal-image", :id=>"modal-image-"+photo.id.to_s
 .modal-footer
-  .images
+  .footer-images
     - product.photos.each do |photo|
       .one-footer-image
         = link_to image_tag(photo.photo.url(:modal_footer)), "", :photo_id => photo.id, :class=>"footer-image"

@@ -1,9 +1,11 @@
 $(document).ready(function(){
   
+  
   $(".section-photo").live("click", function(){
     var product_id = $(this).attr("product_id");
-    $.get("/load_product", {id:product_id}, null, "script");
-    $("#myModal").modal('show');
+    $.get("/load_product", {id:product_id}, function() {
+          $("#myModal").modal('show');
+              }, "script");
     return false;
   });
 
@@ -39,12 +41,14 @@ $(document).ready(function(){
   });
 
   $('#myModal').on('hidden', function () {
+    var to_hide = $(".current-modal-image");
+    to_hide.addClass("not-current-modal-image");
+    to_hide.removeClass("current-modal-image");  
+
     a = $(".first-img");
     a.removeClass("not-current-modal-image");
     a.addClass("current-modal-image");
     a.show();
   });
-
-
   
 });

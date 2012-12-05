@@ -49,7 +49,7 @@ body{
           padding-bottom: 2%;
           padding-top: 2%;
           span{color: #b0a389; font-size: 13px;}
-        }        
+        }
         a{text-decoration: none; font-size: 14px;}
       }
       
@@ -62,7 +62,7 @@ body{
 
   .middle{
 
-    background: url('middle-font.png') no-repeat scroll 0 50px transparent;
+    background: url('bg.jpg') no-repeat scroll 0 50px transparent;
     background-repeat: repeat-x;
 
     margin-bottom: 5px;
@@ -74,7 +74,7 @@ body{
         border-radius: 2px 2px 2px 2px;
         padding: 1%;
         margin-bottom: 3%;
-        height: 350px;
+        height: 260px;
         img{width: 784px;}
       }
       .modules{
@@ -124,11 +124,11 @@ body{
             margin-right: auto;
             padding-top: 8px;
             overflow: hidden;
-            width: 155px;
+            width: 185px;
           }
           .content.contact{margin-bottom: auto; margin-left: 44%; margin-right: auto; padding-top: 15px; overflow: hidden; width: 155px;}
           .content.wedding-list{margin-bottom: auto; margin-left: 38%; margin-right: auto; padding-top: 15px; overflow: hidden; width: 205px;}
-
+          .content.about{width: 150px;}
           .page-name{float: left;
            color: #A7DEE4;
            font-size: 14pt;}
@@ -171,7 +171,7 @@ body{
                 padding: 2px;
                 width: 228px;
               }
-              
+              .enviar-btn:hover{opacity: 0.5;}              
             }
           }
         }
@@ -179,18 +179,18 @@ body{
           float: right;
           width: 47%;
           /*.about-image-frame{
-            height: 370px;
-            margin-bottom: 3%;
-            padding: 1%;
-            width: 90%;
-            @include shadow;
-            img{height: 369px; width: 331px;}
-          }*/
+height: 370px;
+margin-bottom: 3%;
+padding: 1%;
+width: 90%;
+@include shadow;
+img{height: 369px; width: 331px;}
+}*/
           .wedding-right-frame{
             margin-bottom: 3%;
             margin-left: 15%;
             padding: 1%;
-            width: 90%;            
+            width: 90%;
             
             ul li{
               color: #B5B5B4;
@@ -209,7 +209,7 @@ body{
     .site-sections-center{
       margin: auto;
       width: 800px;
-      height: 700px;
+      height: 840px;
       @include shadow;
       .content{
         overflow: hidden;
@@ -226,7 +226,6 @@ body{
           width: 70%;
           .images{
             margin-left: 2%;
-            overflow: hidden;
             .one-image{
               float: left;
               width: 162px;
@@ -235,21 +234,21 @@ body{
               @include shadow;
               img{height: 180px; padding: 2%; width: 155px;}
             }
-            .one-image.last{margin-right: 0px; float: left; margin-left: 0%; width: 165px;}
+            .one-image.last{margin-right: 0px; float: left; margin-left: 0%; width: 162px;}
           }
         }
         .pagination{
           overflow: hidden;
-          font-size: 14px; 
+          font-size: 14px;
           width: 97%;
           margin-left: 2%;
-          a{text-decoration: none;}
+          a{text-decoration: none; color: #b0a389;}
           .previous_page{float: left;}
           .next_page{float: right;}
         }
       }
     }
-  }  
+  }
 
   .footer{
     background: url('footer-font.png');
@@ -275,19 +274,19 @@ body{
   @include shadow;
   border-radius: 2px 2px 2px 2px;
   box-shadow: initial;
+  margin-top: -325px;
+  width: 538px;
 }
 .field.area .wedding-list{width: 355px !important; height: 200px !important;}
 .field.area .contact{width: 355px !important; height: 130px !important;}
 
-.modal{width: 630px; border: 1px solid rgba(0, 0, 0, 0.2); margin: -310px 0 0 -280px;}
+.modal{border: 1px solid rgba(0, 0, 0, 0.2); margin: -310px 0 0 -280px;}
 .modal-header{
   border-bottom: 0;
   padding: 0;
   .product-header{
-    margin-top: 3%;
+    margin-top: 2px;
     overflow: hidden;
-    padding-left: 3%;
-    padding-right: 3%;
 
     .image{
       float: left;
@@ -303,16 +302,25 @@ body{
   }
 }
 .modal-body{
+  max-height: 500px !important;
+  padding: 3px 15px !important;
   .not-current-modal-image{display: none;}
   }
 .modal-footer{
   border-top: 0;
-  .images{
-    float:left;
-    width: 100%;
+  padding: 0 !important;
+  height: 90px;
+  .footer-images{
+    float: left;
+    height: 80px;
+    overflow: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 508px;
+    padding-top: 3px;
     .one-footer-image{float: left; margin-right: 1%;}
   }
 }
 .modal-backdrop{
-  background-color: #FFF;
+  background-color: #FFF !important;
 }

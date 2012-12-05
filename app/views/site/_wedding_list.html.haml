@@ -25,7 +25,7 @@
         .field.area
           = text_area_tag :content, nil, :class=>"wedding-list"
         .field.submit
-          = submit_tag "Enviar"
+          = image_submit_tag("enviar-btn.jpg", :class => "enviar-btn")
           = hidden_field nil, nil, :name => :wedding_list
   .right
     .wedding-right-frame

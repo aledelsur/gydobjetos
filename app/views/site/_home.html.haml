@@ -1,18 +1,18 @@
 .home-photo
-  #slider
-    %ul{:id => "sliderContent"}
+  #s3slider
+    %ul{:id => "s3sliderContent"}
       - @home_photos.each do |hp|
-        %li.sliderImage
-          =image_tag(hp.photo.url(:home))
+        %li.s3sliderImage
+          = image_tag(hp.photo.url(:home))
           %span
-      .clear.sliderImage
+        .clear.s3sliderImage
 .clear
 .modules
   .module
     %div 
       = image_tag "home-module-1.png"
       .clean
-    %a{:href => index_path("wedding-list"), :class=>"module-a"} 
+    %a{:href => index_path("listas-de-casamiento"), :class=>"module-a"} 
       Lista de Casamientos
     .clean
   .module
@@ -36,6 +36,8 @@
 .clear
 
 :javascript
-  $('#slider').s3Slider({
-      timeOut: 2000
+  $(document).ready(function() { 
+    $('#s3slider').s3Slider({
+        timeOut: 2000
+    });
   });

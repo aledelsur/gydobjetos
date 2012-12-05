@@ -2,7 +2,7 @@ class HomePhoto < ActiveRecord::Base
   attr_accessible :photo, :text, :photo_content_type
 
   has_attached_file :photo, 
-  :styles => { :small => "170x200#", :home =>"784x350#"},
+  :styles => { :small => "170x200#", :home =>"784x260#"},
     :storage => :s3,
     :bucket => "gydobjetos",
     :s3_options     => {

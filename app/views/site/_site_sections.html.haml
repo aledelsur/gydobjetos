@@ -8,22 +8,20 @@
     .right
       .images
         - @products.each_with_index do |product, i|
-          - if (i == 2 || i == 5 || i == 8 || i == 11)
-            .one-image.last
-              = link_to(image_tag(product.photos.first.photo.url(:small)), "", :class=>"section-photo", :product_id=>product.id) if product.photos.first
-              =# link_to "producto "+i.to_s, "", :class=>"section-photo", :product_id=>product.id
-          - else
-            .one-image
-              = link_to(image_tag(product.photos.first.photo.url(:small)), "", :class=>"section-photo", :product_id=>product.id) if product.photos.first
-              =# link_to "producto "+i.to_s, "", :class=>"section-photo", :product_id=>product.id
+          - unless product.photos.empty?
+            - if (i == 2 || i == 5 || i == 8 || i == 11)
+              .one-image.last
+                = link_to(image_tag(product.photos.first.photo.url(:small)), "", :class=>"section-photo", :product_id=>product.id) if product.photos.first
+            - else
+              .one-image
+                = link_to(image_tag(product.photos.first.photo.url(:small)), "", :class=>"section-photo", :product_id=>product.id) if product.photos.first
       - if params[:page] == "1" || params[:page].nil?
-        =# will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"", :page_links=>false
+        = will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"", :page_links=>false
       - elsif params[:page] == @products.total_pages.to_s
-        =# will_paginate @products, :next_label=>"", :previous_label=>"ANTERIOR", :page_links=>false  
+        = will_paginate @products, :next_label=>"", :previous_label=>"ANTERIOR", :page_links=>false
       - else
-        =# will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"ANTERIOR", :page_links=>false  
-      =#http://twitter.github.com/bootstrap/javascript.html
-      %div{id: 'myModal', :class => 'modal'}
+        = will_paginate @products, :next_label=>"SIGUIENTE", :previous_label=>"ANTERIOR", :page_links=>false  
+      %div{id: 'myModal', :class => 'modal hide fade'}
 
           
 
