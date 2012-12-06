@@ -29,8 +29,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem "twitter-bootstrap-rails"
-  gem 'less-rails'
 end
+
+gem "twitter-bootstrap-rails"
 
 
 group :development do
