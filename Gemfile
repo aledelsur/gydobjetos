@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source :rubygems
 
 gem 'rails', '3.2.8'
 
@@ -18,19 +17,14 @@ gem 'thin'
 gem 'flash_cookie_session'
 #gem 'rmagick'
 
+gem 'twitter-bootstrap-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'less-rails'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer'
-  gem 'libv8'
-  gem "twitter-bootstrap-rails"
+  gem 'less-rails'
 end
-
-gem 'therubyracer'
-gem 'libv8'
-gem "twitter-bootstrap-rails"
 
 
 group :development do
