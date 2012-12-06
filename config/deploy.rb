@@ -81,7 +81,7 @@ namespace :log do
     run  "cat /dev/null > #{shared_path}/log/#{rails_env}.log"
   end
 end
-after "deploy:finalize_update", "bundle:install"
+#after "deploy:finalize_update", "bundle:install"
 after "deploy:finalize_update", "customs:config"
 after "deploy", "deploy:cleanup"
 # if you want to clean up old releases on each deploy uncomment this:
