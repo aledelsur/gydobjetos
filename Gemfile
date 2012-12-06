@@ -18,14 +18,17 @@ gem 'thin'
 gem 'flash_cookie_session'
 #gem 'rmagick'
 
+gem 'execjs'
+gem 'therubyracer'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
-  gem 'therubyrhino'
+  gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem "twitter-bootstrap-rails"
+  gem "twitter-bootstrap-rails", :git => "git://github.com/seyhunak/twitter-bootstrap-rails.git", :branch => "static"
   gem 'less'
 end
 
