@@ -16,7 +16,7 @@ gem 'sqlite3'
 gem 'thin'
 gem 'flash_cookie_session'
 #gem 'rmagick'
-
+gem 'libv8'
 gem 'twitter-bootstrap-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
