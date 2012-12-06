@@ -41,33 +41,37 @@
                   %span HOGAR
                 %ul.dropdown-menu{:id => "dropdown-1"}
                   %li 
-                    = link_to "Todos", index_path("hogar")
-                  %li.divider
+                    = link_to "- Todos -", index_path("hogar")
+                  .divider-all
+                  %li
                   - @hogar_categories.each do |category|
-                    %li 
+                    %li
                       = link_to category.name, index_path(:event =>"hogar", :category_id => category.id)
+                      .divider-category
               .menu-star-separator
               .btn-group.menu-items.button{:id => "2"}
                 %a.dropdown-toggle{:href => "#"}
                   %span BAZAR
                 %ul.dropdown-menu{:id => "dropdown-2"}
                   %li 
-                    = link_to "Todos", index_path("bazar")
-                  %li.divider
+                    = link_to "- Todos -", index_path("bazar")
+                  .divider-all
                   - @bazar_categories.each do |category|
                     %li 
                       = link_to category.name, index_path(:event => "bazar", :category_id => category.id)
+                      .divider-category
               .menu-star-separator
               .btn-group.menu-items.button{:id => "3"}
                 %a.dropdown-toggle{:href => "#"}
                   %span PETIT
                 %ul.dropdown-menu{:id => "dropdown-3"}
                   %li 
-                    = link_to "Todos", index_path("petit")
-                  %li.divider
+                    = link_to "- Todos -", index_path("petit")
+                  .divider-all
                   - @petit_categories.each do |category|
                     %li 
                       = link_to category.name, index_path(:event =>"petit", :category_id => category.id)
+                      .divider-category
             .clear
             .line-right
       .middle
